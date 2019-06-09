@@ -15,7 +15,6 @@
         <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/twitter.svg" alt="Twitter"/></a>
         <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/instagram.svg" alt="Instagram"/></a>
         <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/search.svg" alt="Search"/></a>
-        
     </div>
 </div>
 

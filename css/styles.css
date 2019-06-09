@@ -249,6 +249,7 @@ input::placeholder {
 }
 
 .footer {
+  margin: 20px 0;
   -ms-grid-row: 6;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
@@ -292,18 +293,16 @@ input::placeholder {
   text-decoration: none;
 }
 
-.pagination {
+nav.pagination {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (minmax(10px, 1fr))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(10px, 1fr));
   text-align: center;
   border-bottom: 1px solid #D9D9D9;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
 }
 
-.pagination a, .pagination span {
+nav.pagination a, nav.pagination span {
   padding: 15px 0;
 }
 
