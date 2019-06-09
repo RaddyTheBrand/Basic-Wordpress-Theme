@@ -34,10 +34,8 @@
         <a class="button" href="<?php the_permalink();?>">More +</a>
     </div>
 </div>
-
 <?php endwhile; } ?>
 
-
-
+<nav class="pagination"><?php echo paginate_links(); ?></nav>
 
 <?php get_footer(); ?>
