@@ -1,6 +1,6 @@
 # Basic-Wordpress-Theme
 
-![Cover Bro](https://github.com/RaddyTheBrand/basic-wordpress-theme/blob/master/screenshot.png)
+![Cover Bro](https://github.com/RaddyTheBrand/basic-wordpress-theme/blob/master/screenshot1.png)
 THis is the basic wordpress theme that I've been developing as part of some of my YouTube tutoririals.
 
 [Part 1 Design](https://www.youtube.com/watch?v=wEEOiKlzUi8)
