@@ -3,13 +3,15 @@
     if ( have_posts() ) { 
     while ( have_posts() ) : the_post();
 ?>
-<div class="article1">
+
+<div class="single__article">
     <div class="thumbnail"><?php the_post_thumbnail( 'medium_large' ); ?></div>
     <div class="content">
         <h1><?php the_title(); ?></h1>
-        <p><?php the_excerpt(); ?></p>
+        <p><?php the_content(); ?></p>
     </div>
 </div>
+
 <?php
     endwhile;
     } 

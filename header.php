@@ -13,18 +13,19 @@
 <div class="wrapper">
 
     <div class="header">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/logo.svg" alt="Basic WordPress Website."/>
+        <a href="<?php echo get_option("siteurl"); ?>">
+            <img src="<?php echo get_template_directory_uri(); ?>/images/logo.svg" alt="Basic WordPress Website."/>
+        </a>
     </div>
     <div class="mobile-menu" onclick="toggleMenu()"><img src="<?php echo get_template_directory_uri(); ?>/images/menu.svg" alt="Menu"/>Menu</div>
 
-    <div id="toggleMyMenu" style="display: none;">
+    <nav id="toggleMyMenu" style="display: none;">
         <?php
             wp_nav_menu( array ('theme_location' =>
             'my-custom-menu', 'container_class' =>
             'custom-menu-class'));
         ?>
-    </div>
+    </nav>
 
     <div class="slogan">Everything a writer needs.</div>
-
-    <div class="container">
+    <div class="container"> 

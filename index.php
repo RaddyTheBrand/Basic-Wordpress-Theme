@@ -14,8 +14,16 @@
         <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/facebook.svg" alt="Facebook"/></a>
         <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/twitter.svg" alt="Twitter"/></a>
         <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/instagram.svg" alt="Instagram"/></a>
-        <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/search.svg" alt="Search"/></a>
+        <a href="#" id="search__button" onclick="toggleSearch()"><img src="<?php echo get_template_directory_uri(); ?>/images/search.svg" alt="Search"/></a>
     </div>
+
+    <div id="search__popup" style="display: none;"> 
+        <div>
+            <input type="text" placeholder="Search..." class="search">
+            <input type="submit" value="Submit" name="searchsubmit" class="searchsubmit">
+        </div>
+    </div>
+
 </div>
 
 <?php
@@ -23,7 +31,7 @@
         while(have_posts()) : the_post();
 ?>
 
-<div class="article">
+<article>
     <div class="thumbnail">
        <?php the_post_thumbnail('medium'); ?>
     </div>
@@ -32,7 +40,7 @@
         <p><?php the_excerpt(); ?></p>
         <a class="button" href="<?php the_permalink();?>">More +</a>
     </div>
-</div>
+</article>
 <?php endwhile; } ?>
 
 <nav class="pagination"><?php echo paginate_links(); ?></nav>
