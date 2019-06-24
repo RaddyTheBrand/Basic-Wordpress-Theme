@@ -1,6 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Source+Serif+Pro');
+// @import url('https://fonts.googleapis.com/css?family=Source+Serif+Pro');
+@import url('https://fonts.googleapis.com/css?family=Raleway:300&display=swap');
 
-$image-radius: 20px;
+$image-radius: 0;
 $primary-color:#000;
 $primary-color-hover: #333333;
 $secondary-color: #D9D9D9;
@@ -10,13 +11,12 @@ $secondary-color: #D9D9D9;
     padding:0;
 }
 
-body {
-    font-family: 'Source Serif Pro', serif;
-    font-size: 1.1em;
+body { 
+    font-family: 'Raleway', sans-serif;
     line-height: 28px;
-    color: $primary-color;
-}
-
+    color: $primary-color; 
+} 
+  
 img {
     max-width: 100%;
     height: auto;
@@ -39,6 +39,32 @@ a {
     }
 }
 
+blockquote {
+    background: #f9f9f9;
+    border-left: 10px solid $secondary-color;
+    margin: 1.5em 0;
+    padding: 0.5em 10px;
+    quotes: "\201C""\201D""\2018""\2019";
+
+    &:before {
+        color: #ccc;
+        content: open-quote;
+        font-size: 4em;
+        line-height: 0.1em;
+        margin-right: 0.25em;
+        vertical-align: -0.4em;
+    }
+
+    p {
+        display: inline;
+    }
+
+    cite {
+        display: block;
+    }
+}
+
+
 input {
     font-family: inherit;
     border:0;
@@ -46,6 +72,7 @@ input {
     height: 65px;
     padding: 10px;
     box-sizing: border-box;
+    width: 100%;
 
     &::placeholder {
         color: $secondary-color;
@@ -81,6 +108,7 @@ input {
     align-self: center;
     justify-self: end;
     font-size: 0.8em;
+    cursor: pointer;
 }
 
 .slogan {
@@ -104,6 +132,7 @@ input {
 
     img {  
         border-radius: $image-radius;
+        display: block;
     }
     .author-image {
         grid-area: author-image;
@@ -124,7 +153,8 @@ input {
     grid-row-gap: 20px;
     border-top: 1px solid $secondary-color;
     border-bottom: 1px solid $secondary-color;
-
+    position: relative;
+ 
     .newsletter {
         grid-area: newsletter;
         display: grid;
@@ -142,26 +172,34 @@ input {
         align-items: center;
         margin-bottom: 14px;
 
-        a {
+        a, span {
             flex-grow: 1;
             text-align: center;
             flex-basis: 0;
+            cursor: pointer;
         }
     }
 
     #search__popup {
-        background-color: rgba(0, 0, 0, 0.8);
-        position: fixed;
-        top: 0;
+        background-color: rgba(0, 0, 0, 1);
+        position: absolute;
         left: 0;
         right: 0;
-        bottom: 0;
-        display: grid;
-        justify-items: center;
-        align-items: center;
+        bottom: -85px;
+        padding: 10px;
+
+        form { 
+            justify-items: center;
+            align-items: center;
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+        }
+
+        .screen-reader-text {
+            display: none;
+        }
         
         input.search {
-            width: 400px;
             border-radius: $image-radius;
         }
     }
@@ -182,6 +220,13 @@ article {
     grid-template-areas: 
     "thumbnail"
     "content";
+
+    a {
+        text-decoration: none;
+        &:hover {
+            color: $primary-color;
+        }
+    }
 
     .thumbnail {
         height: 217px;
@@ -253,24 +298,24 @@ footer {
         list-style: none;
 
         li {
-            padding: 20px;
             position: relative;
 
-            &:not(:last-child):after {
-                position: absolute;
-                transform: rotate(90deg);
-                content: " |";
-                left: 0;
-                right: 0;
-                top: 53px;
-                color: $secondary-color;
-            }
+            // &:not(:last-child):after {
+            //     position: absolute;
+            //     transform: rotate(90deg);
+            //     content: " |";
+            //     left: 0;
+            //     right: 0;
+            //     top: 53px;
+            //     color: $secondary-color;
+            // }
         
         a {
+            display: block;
             padding:20px;
             text-decoration: none;
         }
-
+ 
         }
     }
 
@@ -285,6 +330,19 @@ nav.pagination {
 
     a, span {
         padding: 15px 0;
+    }
+}
+
+
+
+// Search Page 
+
+.search__results {
+
+    h1.heading {margin-top: 1em;}
+
+    article {
+        
     }
 }
 

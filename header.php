@@ -17,7 +17,7 @@
             <img src="<?php echo get_template_directory_uri(); ?>/images/logo.svg" alt="Basic WordPress Website."/>
         </a>
     </div>
-    <div class="mobile-menu" onclick="toggleMenu()"><img src="<?php echo get_template_directory_uri(); ?>/images/menu.svg" alt="Menu"/>Menu</div>
+    <div class="mobile-menu"><img src="<?php echo get_template_directory_uri(); ?>/images/menu.svg" alt="Menu"/>Menu</div>
 
     <nav id="toggleMyMenu" style="display: none;">
         <?php
