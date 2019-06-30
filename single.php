@@ -17,18 +17,23 @@
     } 
 ?>
 
-    <div class="social">
-        <div class="newsletter">
-            <input type="text" placeholder="Email Newsletter" class="subscribeinput">
-            <input type="submit" value="Submit" name="subscribe" id="mc-embedded-subscribe" class="subscribebutton">
-        </div>
-        <div class="networks"> 
-            <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/facebook.svg" alt="facebook" /></a>
-            <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/twitter.svg" alt="Twitter" /></a>
-            <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/instagram.svg" alt="Instagram" /></a>
-            <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/search.svg" alt="Search" /></a>
-        </div>
+<div class="social">
+    <div class="newsletter">
+        <input type="text" placeholder="Email Newsletter" class="subscribeinput">
+        <input type="submit" value="Submit" name="subscribe" class="subscribebutton">
+    </div>
+    <div class="networks">
+        <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/facebook.svg" alt="Facebook"/></a>
+        <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/twitter.svg" alt="Twitter"/></a>
+        <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/instagram.svg" alt="Instagram"/></a>
+        <span id="search__button" onclick="toggleSearch()"><img src="<?php echo get_template_directory_uri(); ?>/images/search.svg" alt="Search"/></span>
+    </div>
 
+    <div id="search__popup" style="display: none;"> 
+            <form action="/" method="get">
+                    <input type="text" name="s" placeholder="Search..." id="search" value="<?php the_search_query(); ?>" />
+                    <input type="submit" alt="Search" />
+            </form>
     </div>
 
 </div>

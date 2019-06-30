@@ -1,5 +1,5 @@
 // @import url('https://fonts.googleapis.com/css?family=Source+Serif+Pro');
-@import url('https://fonts.googleapis.com/css?family=Raleway:300&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,500&display=swap');
 
 $image-radius: 0;
 $primary-color:#000;
@@ -13,23 +13,59 @@ $secondary-color: #D9D9D9;
 
 body { 
     font-family: 'Raleway', sans-serif;
-    line-height: 28px;
     color: $primary-color; 
+    line-height: 1.6;
+    font-weight: 300;
+    text-size-adjust: auto;
+    letter-spacing: 1px;
+    font-size: 1em;
+    background-color:#FFFFFF;
 } 
-  
+
 img {
     max-width: 100%;
     height: auto;
 }
 
-h1, h2, h3 {
-    font-weight: normal;
-    margin-bottom: 18px;
-    font-size: 1.6em;
+  
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+h1 {
+    font-size: 1.7em;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+h3 {
+    font-size: 1.3em;
+}
+
+h4 {
+    font-size: 1.1em;
+}
+
+h5, h6 {
+    font-size: 1em;
 }
 
 p {
-    margin-bottom: 10px;
+    margin-bottom: 0.8em;
+    text-rendering: optimizeLegibility;
+}
+
+::-moz-selection { /* Code for Firefox */
+    color: #fff;
+    background: $primary-color;
+}
+  
+::selection {
+    color: #fff;
+    background: $primary-color;
 }
 
 a {
@@ -38,6 +74,41 @@ a {
         color: $secondary-color;
     }
 }
+
+ul { 
+    list-style-type: disc; 
+    list-style-position: inside; 
+ }
+
+ol { 
+    list-style-type: decimal; 
+    list-style-position: inside; 
+ }
+
+ul ul, ol ul { 
+    list-style-type: circle; 
+    list-style-position: inside; 
+    margin-left: 15px; 
+}
+
+ol ol, ul ol { 
+    list-style-type: lower-latin; 
+    list-style-position: inside; 
+    margin-left: 15px; 
+}
+
+table {
+    border-collapse: collapse;
+    tr {
+        border-bottom: 1px solid #ccc;
+    }
+
+    th, td {
+        text-align: left;
+        padding: 4px;
+    }
+}
+
 
 blockquote {
     background: #f9f9f9;
@@ -80,24 +151,19 @@ input {
 }
 
 .wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    grid-template-areas: 
-    "header mobile-menu"
-    "slogan slogan"
-    "author author"
-    "social social"
-    "container container"
-    "footer footer";
     max-width: 600px;
     margin: 0 auto;
     padding: 0 25px;
     box-sizing: border-box;
+    position: relative;
 }
 
 .header {
-    grid-area: header;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+    "logo mobile-menu";
     padding: 40px 0;
 }
 
@@ -109,12 +175,22 @@ input {
     justify-self: end;
     font-size: 0.8em;
     cursor: pointer;
+    max-width: 36px;
+
+    span {
+        display: block;
+    }
+ 
+    .close__burger {
+        display: none;
+    }
+
 }
 
 .slogan {
     grid-area: slogan;
     text-align: center;
-    padding: 10px 0;
+    padding: 10px;
     border-top: 1px solid $secondary-color;
     border-bottom: 1px solid $secondary-color;
 }
@@ -177,6 +253,10 @@ input {
             text-align: center;
             flex-basis: 0;
             cursor: pointer;
+
+            &:hover {
+                opacity: 0.7;
+            }
         }
     }
 
@@ -185,9 +265,9 @@ input {
         position: absolute;
         left: 0;
         right: 0;
-        bottom: -85px;
+        top: 65px;
         padding: 10px;
-
+ 
         form { 
             justify-items: center;
             align-items: center;
@@ -266,7 +346,8 @@ article {
 
 
 .button {
-    padding: 20px 0;
+    padding: 6px;
+    background-color: $secondary-color;
 }
 
 .loadmore {
@@ -333,16 +414,22 @@ nav.pagination {
     }
 }
 
-
-
 // Search Page 
-
 .search__results {
+    h1.heading {
+        margin-top: 1em;
+        margin-bottom:0;
+    }
+}
 
-    h1.heading {margin-top: 1em;}
 
-    article {
-        
+.error404 {
+
+    h1 {
+        margin-top: 1em;
+    }
+    input {
+        border: 1px solid $secondary-color;
     }
 }
 

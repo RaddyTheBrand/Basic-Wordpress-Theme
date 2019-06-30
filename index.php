@@ -2,7 +2,15 @@
 
 <div class="author">
     <div class="author-image"><img src="<?php echo get_template_directory_uri(); ?>/images/author.jpg" alt="Author Name"/></div>
-    <div class="author-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aliquet diam sed lacus vehicula, sed porta purus blandit. Vivamus et tincidunt justo, non consequat nulla.</div>
+    <div class="author-content">
+        <?php 
+            $optionAuthor = get_option('author');
+            if($optionAuthor == "" || $optionAuthor == null) {
+                $optionAuthor = "Hey, you need to edit this by going to your Dashboard -> Theme Options. Change the Author field and save.";
+            }
+            echo $optionAuthor;
+        ?>
+    </div>
 </div>
 
 <div class="social">
@@ -11,9 +19,32 @@
         <input type="submit" value="Submit" name="subscribe" class="subscribebutton">
     </div>
     <div class="networks">
-        <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/facebook.svg" alt="Facebook"/></a>
-        <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/twitter.svg" alt="Twitter"/></a>
-        <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/instagram.svg" alt="Instagram"/></a>
+
+    <?php 
+            $imgUrl = get_template_directory_uri();
+            $optionFb = get_option('fb');
+            $optionTwitter = get_option('twitter');
+            $optionInsta = get_option('insta');
+            if($optionFb == "" || $optionFb == null) {
+                $optionFb = "";
+            }
+            else {
+                echo "<a href='$optionFb'><img src='$imgUrl/images/facebook.svg' alt='Facebook'/></a>";
+            }
+            if($optionTwitter == "" || $optionTwitter == null) {
+                $optionTwitter = "";
+            }
+            else {
+                echo "<a href='$optionTwitter'><img src='$imgUrl/images/twitter.svg' alt='Twitter'/></a>";
+            }
+            if($optionInsta == "" || $optionInsta == null) {
+                $optionInsta = "";
+            }
+            else {
+                echo "<a href='$optionInsta'><img src='$imgUrl/images/instagram.svg' alt='Insta'/></a>";
+            }
+            
+    ?>
         <span id="search__button" onclick="toggleSearch()"><img src="<?php echo get_template_directory_uri(); ?>/images/search.svg" alt="Search"/></span>
     </div>
 
