@@ -69,7 +69,7 @@
     </div>
     <div class="content">
         <h2><?php the_title(); ?></h2>
-        <p><?php the_excerpt(); ?></p>
+        <p><?php echo get_excerpt(186); ?></p>
         <a class="button" href="<?php the_permalink();?>">More +</a>
     </div>
     </a>
