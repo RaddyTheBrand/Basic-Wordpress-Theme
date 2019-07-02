@@ -33,10 +33,10 @@
     <div class="slogan">
     <?php
         $optionSlogan = get_option('slogan'); 
-        if ($optionFooter == "" || $optionFooter == null) {
-            $optionFooter = "Edit this by going to your Dashboard -> Theme Options -> Slogan";
+        if ($optionSlogan == "" || $optionSlogan == null) {
+            $optionSlogan = "Edit this by going to your Dashboard -> Theme Options -> Slogan";
         }
-        echo $optionFooter;
+        echo $optionSlogan;
     ?>
     
     </div>

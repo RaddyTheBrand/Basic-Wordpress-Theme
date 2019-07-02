@@ -26,7 +26,7 @@ function basic_theme_settings_page() {
     echo '<h1>Basic Theme Settings</h1>';
 
     /*Group Options*/
-    $optionAuthor = esc_attr(get_option('slogan'));
+    $optionSlogan = esc_attr(get_option('slogan'));
     $optionAuthor = esc_attr(get_option('author'));
     $optionFooter = esc_attr(get_option('footer'));
     $optionPP = esc_attr(get_option('pp'));
@@ -51,7 +51,7 @@ function basic_theme_settings_page() {
                 <th scope="row">
                     <label>Slogan</label>
                 </th>
-                <td>
+                <td> 
                     <input placeholder="Example: Everything a writer needs." class="regular-text" type="text" id="slogan" name="slogan" value="<?php echo $optionSlogan; ?>"/>
                 </td>
             </tr>

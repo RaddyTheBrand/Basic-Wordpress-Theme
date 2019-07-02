@@ -195,6 +195,7 @@ input::placeholder {
   font-size: 0.8em;
   cursor: pointer;
   max-width: 36px;
+  height: 53px;
 }
 
 .mobile-menu span {
@@ -222,8 +223,8 @@ input::placeholder {
   -ms-grid-rows: 1fr;
       grid-template-rows: 1fr;
   grid-column-gap: 6%;
-  padding: 25px 0;
-      grid-template-areas: "author-image author-image" "author-content author-content";
+  padding: 25px 0 12px 0;
+      grid-template-areas: "author-image author-image" "author-content author-content";
 }
 
 .author img {
@@ -236,6 +237,7 @@ input::placeholder {
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: author-image;
+  margin-bottom: 1em;
 }
 
 .author .author-content {
@@ -251,7 +253,7 @@ input::placeholder {
   display: grid;
   -ms-grid-rows: 1fr;
       grid-template-rows: 1fr;
-      grid-template-areas: "newsletter" "networks";
+      grid-template-areas: "newsletter" "networks";
   grid-row-gap: 20px;
   border-top: 1px solid #D9D9D9;
   border-bottom: 1px solid #D9D9D9;
@@ -341,7 +343,7 @@ article {
   grid-gap: 6%;
   padding: 25px 0;
   border-bottom: 1px solid #D9D9D9;
-      grid-template-areas: "thumbnail" "content";
+      grid-template-areas: "thumbnail" "content";
 }
 
 article a {
@@ -391,6 +393,8 @@ article .content {
 .button {
   padding: 6px;
   background-color: #D9D9D9;
+  margin-bottom: 1.7em;
+  display: block;
 }
 
 .loadmore {
@@ -463,6 +467,7 @@ nav.pagination a, nav.pagination span {
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
         grid-template-areas: "thumbnail content";
+    grid-gap: 4%;
   }
   .social {
     -ms-grid-columns: 2fr 1fr;
@@ -477,6 +482,9 @@ nav.pagination a, nav.pagination span {
   }
   .author {
         grid-template-areas: "author-image author-content";
+  }
+  .button {
+    display: inline-block;
   }
 }
 /*# sourceMappingURL=styles.css.map */

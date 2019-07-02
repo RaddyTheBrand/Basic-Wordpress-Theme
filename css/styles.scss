@@ -166,7 +166,7 @@ input {
     "logo mobile-menu";
     padding: 40px 0;
 }
-
+ 
 .mobile-menu {
     grid-area: mobile-menu;
     display: grid;
@@ -176,6 +176,7 @@ input {
     font-size: 0.8em;
     cursor: pointer;
     max-width: 36px;
+    height: 53px;
 
     span {
         display: block;
@@ -201,7 +202,7 @@ input {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     grid-column-gap: 6%;
-    padding: 25px 0;
+    padding: 25px 0 12px 0;
     grid-template-areas: 
     "author-image author-image"
     "author-content author-content";
@@ -212,6 +213,7 @@ input {
     }
     .author-image {
         grid-area: author-image;
+        margin-bottom: 1em;
     }
     .author-content {
         grid-area: author-content;
@@ -348,6 +350,8 @@ article {
 .button {
     padding: 6px;
     background-color: $secondary-color;
+    margin-bottom: 1.7em;
+    display: block;
 }
 
 .loadmore {
@@ -440,7 +444,8 @@ nav.pagination {
         grid-template-columns: 1fr 1fr;
         grid-template-areas: 
         "thumbnail content";
-    }
+        grid-gap: 4%;
+    } 
 
     .social {
         grid-template-columns: 2fr 1fr;
@@ -459,6 +464,10 @@ nav.pagination {
     .author {
         grid-template-areas: 
         "author-image author-content";
+    }
+
+    .button {
+        display: inline-block;
     }
 
 
