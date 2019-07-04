@@ -19,6 +19,7 @@ jQuery( document ).ready(function() {
             jQuery(mobileNav).slideToggle('fast');
             jQuery(openBurger).hide();
             jQuery(closeBurger).show();
+            jQuery(closeBurger).css('display', 'block');
             console.log("isOpen");
             isOpen++;
         }

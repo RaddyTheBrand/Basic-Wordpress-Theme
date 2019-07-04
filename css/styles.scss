@@ -170,14 +170,14 @@ input {
  
 .mobile-menu {
     grid-area: mobile-menu;
-    display: grid;
-    grid-template-rows: 1fr;
     align-self: center;
     justify-self: end;
+    vertical-align: top;
     font-size: 0.8em;
     cursor: pointer;
     max-width: 36px;
     height: 53px;
+    width: 36px;
 
     span {
         display: block;
@@ -200,13 +200,17 @@ input {
 .author {
     grid-area: author;
     display: grid;
+    display: -ms-grid;
+    -ms-grid-columns: 1fr 6% 1fr;
     grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: 1fr;
     grid-template-rows: 1fr;
     grid-column-gap: 6%;
     padding: 25px 0;
     grid-template-areas: 
     "author-image author-image"
-    "author-content author-content";
+    "author-content author-content"; 
+
 
     img {  
         border-radius: $image-radius;
@@ -228,7 +232,10 @@ input {
 
 .social {
     grid-area: social;
+    display: -ms-grid;
     display: grid;
+    -ms-grid-column: 2fr 1fr;
+
     grid-template-rows: 1fr;
     grid-template-areas: 
     "newsletter"
@@ -237,7 +244,7 @@ input {
     border-top: 1px solid $secondary-color;
     border-bottom: 1px solid $secondary-color;
     position: relative;
- 
+
     .newsletter {
         grid-area: newsletter;
         display: grid;
@@ -300,13 +307,21 @@ input {
 }
 
 article {
+    display: -ms-grid;
     display: grid;
+
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns:  repeat( 2, 1fr );
     grid-gap: 6%;
     padding: 25px 0;
     border-bottom: 1px solid $secondary-color;
     grid-template-areas: 
     "thumbnail"
     "content";
+
+ 
+
+  
 
     a {
         text-decoration: none;
@@ -325,8 +340,8 @@ article {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: grayscale(100%);
-            -webkit-filter: grayscale(100%);
+            // filter: grayscale(100%);
+            // -webkit-filter: grayscale(100%);
         }
     }
 
@@ -358,6 +373,11 @@ article {
     background-color: $secondary-color;
     display: block;
     margin-bottom: 16px;
+
+    &:hover {
+        color: $secondary-color;
+        background-color: $primary-color;
+    }
 }
 
 .loadmore {

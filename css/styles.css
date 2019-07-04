@@ -185,18 +185,17 @@ input::placeholder {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
   grid-area: mobile-menu;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: 1fr;
-      grid-template-rows: 1fr;
-  -ms-grid-row-align: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
       align-self: center;
   -ms-grid-column-align: end;
       justify-self: end;
+  vertical-align: top;
   font-size: 0.8em;
   cursor: pointer;
   max-width: 36px;
   height: 53px;
+  width: 36px;
 }
 
 .mobile-menu span {
@@ -217,12 +216,12 @@ input::placeholder {
 
 .author {
   grid-area: author;
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
+  display: -ms-grid;
+  -ms-grid-columns: 1fr 6% 1fr;
+  grid-template-columns: 1fr 1fr;
   -ms-grid-rows: 1fr;
-      grid-template-rows: 1fr;
+  grid-template-rows: 1fr;
   grid-column-gap: 6%;
   padding: 25px 0;
       grid-template-areas: "author-image author-image" "author-content author-content";
@@ -254,6 +253,7 @@ input::placeholder {
   grid-area: social;
   display: -ms-grid;
   display: grid;
+  -ms-grid-column: 2fr 1fr;
   -ms-grid-rows: 1fr;
       grid-template-rows: 1fr;
       grid-template-areas: "newsletter" "networks";
@@ -343,6 +343,8 @@ input::placeholder {
 article {
   display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 6%;
   padding: 25px 0;
   border-bottom: 1px solid #D9D9D9;
@@ -371,8 +373,6 @@ article .thumbnail img {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  filter: grayscale(100%);
-  -webkit-filter: grayscale(100%);
 }
 
 article .content {
@@ -401,6 +401,11 @@ article .content {
   background-color: #D9D9D9;
   display: block;
   margin-bottom: 16px;
+}
+
+.button:hover {
+  color: #D9D9D9;
+  background-color: #000;
 }
 
 .loadmore {
