@@ -62,18 +62,30 @@
         while(have_posts()) : the_post();
 ?>
 
+<div class="grid">
+    <div class="one">One</div>
+    <div class="two">Two</div>
+</div>
+
+
+
+
 <article>
-    <a href="<?php the_permalink();?>">
-    <div class="thumbnail">
-       <?php the_post_thumbnail('medium'); ?>
-    </div>
-    <div class="content">
-        <h2><?php the_title(); ?></h2>
-        <p><?php echo get_excerpt(186); ?></p>
-        <a class="button" href="<?php the_permalink();?>">More +</a>
-    </div>
-    </a>
-</article>
+
+        <div class="thumbnail">
+            <?php the_post_thumbnail('medium'); ?>
+        </div>
+
+        <div class="content">
+            <h2><?php the_title(); ?></h2>
+            <p><?php echo get_excerpt(186); ?></p>
+            <a class="button" href="<?php the_permalink();?>">More +</a>
+        </div>
+
+    </article>
+
+
+
 <?php endwhile; } ?>
 
 <nav class="pagination"><?php echo paginate_links(); ?></nav>
