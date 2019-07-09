@@ -1,4 +1,3 @@
-// A $( document ).ready() block.
 jQuery( document ).ready(function() {
 
     // Menu Toggle
@@ -23,9 +22,6 @@ jQuery( document ).ready(function() {
             jQuery(closeBurger).css('display', 'block');
             console.log("isOpen");
             isOpen++;
-
-            // TweenLite.to('#letterG', 2.5, { ease: Elastic.easeOut.config(1, 0.3), y: -100 });
-
         } 
         else {
             jQuery(mobileNav).slideToggle('fast');
@@ -42,8 +38,6 @@ jQuery( document ).ready(function() {
         jQuery( "#search__popup" ).slideToggle( "fast" );
     });
 
-
- 
 
 // IE/Edge fallback for responsive images while 'object-fit' property is not supported
 function ObjectFitIt() {

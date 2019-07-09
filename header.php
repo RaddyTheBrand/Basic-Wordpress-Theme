@@ -12,9 +12,14 @@
 
     <div class="header">
         <?php 
-            if ( function_exists( 'the_custom_logo' ) ) {
+            if ( function_exists( 'the_custom_logo') == '' ) {
                 the_custom_logo();
-            }    
+            }
+            else {
+                /*Link to homepage */ 
+                ?><h1><?php bloginfo( 'name' ); ?></h1>
+                <?php
+            } 
         ?>
         <div class="mobile-menu">
             <span class="open__burger"><img src="<?php echo get_template_directory_uri(); ?>/images/menu.svg" alt="Menu"/>Menu</span>
@@ -29,7 +34,7 @@
             'custom-menu-class'));
         ?>
     </nav>
-    <span id="letterG" style="margin-bottom: -100px;">G</span>
+  
     <div class="slogan">
     <?php
         $optionSlogan = get_option('slogan'); 
