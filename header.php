@@ -29,7 +29,7 @@
             'custom-menu-class'));
         ?>
     </nav>
-
+    <span id="letterG" style="margin-bottom: -100px;">G</span>
     <div class="slogan">
     <?php
         $optionSlogan = get_option('slogan'); 

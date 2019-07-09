@@ -13,6 +13,7 @@ jQuery( document ).ready(function() {
     const closeBurger = jQuery('.close__burger');
     var isOpen = 0;
 
+ 
     jQuery(navToggle).click(function(){
 
         if(isOpen == 0) {
@@ -22,7 +23,10 @@ jQuery( document ).ready(function() {
             jQuery(closeBurger).css('display', 'block');
             console.log("isOpen");
             isOpen++;
-        }
+
+            // TweenLite.to('#letterG', 2.5, { ease: Elastic.easeOut.config(1, 0.3), y: -100 });
+
+        } 
         else {
             jQuery(mobileNav).slideToggle('fast');
             jQuery(openBurger).show();

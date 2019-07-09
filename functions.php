@@ -6,9 +6,16 @@ function basic_enqueue_styles_scripts() {
     $dependencies = array('styles');
     wp_enqueue_style( 'basic-style', get_stylesheet_uri(), $dependencies ); 
     add_theme_support('post-thumbnails');
+    wp_register_script('gsap-tweenmax', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js', false, '2.1.3');
+    wp_enqueue_script('gsap-tweenmax');
     wp_enqueue_script( 'my-custom-script', get_stylesheet_directory_uri() . '/js/script.js', array( 'jquery' ) );
 }
 add_action( 'wp_enqueue_scripts', 'basic_enqueue_styles_scripts' );
+
+
+
+
+
 
 
 // Adding Title-Tag
