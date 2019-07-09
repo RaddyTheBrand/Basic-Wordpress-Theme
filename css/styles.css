@@ -221,7 +221,8 @@ input::placeholder {
   -ms-grid-column: 2fr 1fr;
   -ms-grid-rows: 1fr;
       grid-template-rows: 1fr;
-      grid-template-areas: "newsletter" "networks";
+      grid-template-areas: "newsletter"
+ "networks";
   grid-row-gap: 20px;
   border-top: 1px solid #D9D9D9;
   border-bottom: 1px solid #D9D9D9;
@@ -410,7 +411,8 @@ article {
       grid-template-rows: 1fr;
   -ms-grid-row: 1fr;
   padding: 25px 0;
-      grid-template-areas: "thumbnail" "content";
+      grid-template-areas: "thumbnail"
+ "content";
 }
 
 .grid a {
@@ -418,6 +420,10 @@ article {
 }
 
 .grid a:hover {
+  color: #000;
+}
+
+.test {
   color: #000;
 }
 
