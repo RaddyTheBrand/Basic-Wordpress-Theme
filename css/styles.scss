@@ -166,7 +166,16 @@ input {
     grid-template-rows: 1fr;
     grid-template-areas: 
     "logo mobile-menu";
-    padding: 40px 0;
+    padding: 40px 0; 
+
+    a {
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    h1 {
+        grid-area: logo;
+    } 
 }
  
 .mobile-menu {
@@ -248,7 +257,7 @@ input {
         position: absolute;
         left: 0;
         right: 0;
-        top: 65px;
+        top: 134px;
         padding: 10px;
  
         form { 
@@ -317,18 +326,19 @@ footer {
     margin: 20px 0;
     grid-area: footer;
     text-align: center;
-}
+} 
 
 
 #toggleMyMenu {
     font-size: 1.6em;
     position: absolute;
-    top: 140px;
-    background-color: #fff;
+    top: 206px;
+    background-color: rgb(250, 250, 250);
     left:0;
     right: 0;
     text-align: center;
     z-index: 1;
+
 
     ul {
         list-style: none;
@@ -441,8 +451,6 @@ article {
 }
 
 
-
-
 @media screen and (min-width: 736px) {
     .grid {
         display: -ms-grid;
@@ -481,6 +489,12 @@ article {
                 vertical-align: middle;
             }
         }
+
+        #search__popup {
+            top: 65px;
+        } 
+
+     
     }
 
 

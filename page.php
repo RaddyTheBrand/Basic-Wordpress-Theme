@@ -9,7 +9,7 @@
 ?>
 
 <div>
-<h1>HOME</h1>
+    <h1 style="color:red;">Page.php</h1>
     <?php the_post_thumbnail('medium'); ?>
     <h1><?php the_title(); ?></h1>
     <?php the_content();?>

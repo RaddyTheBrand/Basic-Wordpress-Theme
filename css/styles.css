@@ -181,6 +181,17 @@ input::placeholder {
   padding: 40px 0;
 }
 
+.header a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.header h1 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: logo;
+}
+
 .mobile-menu {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
@@ -221,8 +232,7 @@ input::placeholder {
   -ms-grid-column: 2fr 1fr;
   -ms-grid-rows: 1fr;
       grid-template-rows: 1fr;
-      grid-template-areas: "newsletter"
- "networks";
+      grid-template-areas: "newsletter" "networks";
   grid-row-gap: 20px;
   border-top: 1px solid #D9D9D9;
   border-bottom: 1px solid #D9D9D9;
@@ -279,7 +289,7 @@ input::placeholder {
   position: absolute;
   left: 0;
   right: 0;
-  top: 65px;
+  top: 134px;
   padding: 10px;
 }
 
@@ -350,8 +360,8 @@ footer {
 #toggleMyMenu {
   font-size: 1.6em;
   position: absolute;
-  top: 140px;
-  background-color: #fff;
+  top: 206px;
+  background-color: #fafafa;
   left: 0;
   right: 0;
   text-align: center;
@@ -411,8 +421,7 @@ article {
       grid-template-rows: 1fr;
   -ms-grid-row: 1fr;
   padding: 25px 0;
-      grid-template-areas: "thumbnail"
- "content";
+      grid-template-areas: "thumbnail" "content";
 }
 
 .grid a {
@@ -422,7 +431,6 @@ article {
 .grid a:hover {
   color: #000;
 }
-
 
 .col1 {
   height: 242px;
@@ -476,6 +484,9 @@ article {
   }
   .social .networks img {
     vertical-align: middle;
+  }
+  .social #search__popup {
+    top: 65px;
   }
   .button {
     display: inline-block;

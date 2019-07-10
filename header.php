@@ -7,7 +7,7 @@
     <?php wp_head(); ?>
 </head>
 <body>
-
+ 
 <div class="wrapper">
 
     <div class="header">
@@ -17,7 +17,8 @@
             }
             else {
                 /*Link to homepage */ 
-                ?><h1><?php bloginfo( 'name' ); ?></h1>
+                ?>
+                <h1><a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a></h1>
                 <?php
             } 
         ?>

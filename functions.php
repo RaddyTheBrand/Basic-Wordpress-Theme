@@ -13,11 +13,6 @@ function basic_enqueue_styles_scripts() {
 add_action( 'wp_enqueue_scripts', 'basic_enqueue_styles_scripts' );
 
 
-
-
-
-
-
 // Adding Title-Tag
 function basic_wp_setup() {
     add_theme_support ( 'title-tag' );
