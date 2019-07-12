@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+<div class="container"> 
 
 <div class="author grid">
     <div class="author-image col1"><img class="objFit" src="<?php echo get_template_directory_uri(); ?>/images/author.jpg" alt="Author Name"/></div>
@@ -14,49 +15,24 @@
 </div> 
 
 <?php
-
-
-preg_match('/MSIE (.*?);/', $_SERVER['HTTP_USER_AGENT'], $matches);
-if(count($matches)<2){
-  preg_match('/Trident\/\d{1,2}.\d{1,2}; rv:([0-9]*)/', $_SERVER['HTTP_USER_AGENT'], $matches);
-}
-
-if (count($matches)>1){
-  //Then we're using IE
-  $version = $matches[1];
-
-  switch(true){
-    case ($version<=8):
-      //IE 8 or under!
-      echo "Wow";
-      break;
-
-    case ($version==9 || $version==10):
-      //IE9 & IE10!
-      break;
-
-    case ($version==11):
-      //Version 11!
-      echo "this is IE11";
-      break;
-
-    default:
-      //You get the idea
-  }
-}
-
-?>
-<?php
     require_once( get_template_directory() . '/include/social.php' );
 
     if(have_posts()) {
         while(have_posts()) : the_post();
 ?>
-    <h1 style="color:red;">Front-page.php</h1>
+
 <article class="grid">
-        <div class="col1">
+        <div class="col1 thumbnail">
             <a href="<?php the_permalink();?>">
-                <?php the_post_thumbnail('medium'); ?>
+                <?php  
+                  if ( has_post_thumbnail() ) {
+                    the_post_thumbnail('medium');
+                  }
+                  else {
+                  echo '<img src="' . get_bloginfo( 'stylesheet_directory' ) 
+                  . '/images/thumbnail-default.jpg" />';
+                  }
+            ?>
             </a>
         </div> 
         <div class="col2">
@@ -69,5 +45,17 @@ if (count($matches)>1){
 </article>
 
 <?php endwhile; } ?>
-<nav class="pagination"><?php echo paginate_links(); ?></nav>
+</div>
+
+<?php
+if ( function_exists( 'paginate_links') !== '' ) {
+    ?>
+    <nav class="pagination"><?php echo paginate_links(); ?> </nav> 
+    <?php
+}
+else {
+    /*Link to homepage */ 
+}
+?>
+
 <?php get_footer(); ?>

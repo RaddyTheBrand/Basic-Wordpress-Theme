@@ -142,7 +142,7 @@ input {
     font-family: inherit;
     border:0;
     font-size: 1.1em;
-    height: 65px;
+    height: 56px;
     padding: 10px;
     box-sizing: border-box;
     width: 100%;
@@ -209,36 +209,40 @@ input {
 
 
 .social {
-    grid-area: social;
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-column: 2fr 1fr;
-
-    grid-template-rows: 1fr;
-    grid-template-areas: 
-    "newsletter"
-    "networks";
-    grid-row-gap: 20px;
     border-top: 1px solid $secondary-color;
     border-bottom: 1px solid $secondary-color;
     position: relative;
+    padding: 0px!important;
+
 
     .newsletter {
-        grid-area: newsletter;
-        display: grid;
-        grid-template-columns: 2fr 1fr;
+        
+        .subscribeinput {
+            width: 67.333%;
+            font-size: 0.9em;
+        }
+        .subscribebutton { width: 31.3%; float:right; font-size: 0.8em;}
 
         .subscribebutton {
             background-color: $primary-color;
             color: #fff;
         }
+
+        .response {
+            position: absolute;
+            bottom: 56px;
+            background: $primary-color;
+            color: $secondary-color;
+            padding: 10px;
+        }
     }
+
     .networks {
-        grid-area: networks;
         display: flex;
         justify-content: center;
         align-items: center;
         margin-bottom: 14px;
+        height: 56px;
 
         a, span {
             flex-grow: 1;
@@ -257,7 +261,7 @@ input {
         position: absolute;
         left: 0;
         right: 0;
-        top: 134px;
+        top: 122px;
         padding: 10px;
  
         form { 
@@ -275,16 +279,12 @@ input {
             border-radius: $image-radius;
         }
     }
-
- 
 }
 
 
 .container{
     grid-area: container;
 }
-
-
 
 .single__article {
     padding: 10px 0;
@@ -332,12 +332,14 @@ footer {
 #toggleMyMenu {
     font-size: 1.6em;
     position: absolute;
-    top: 206px;
+    top: 155px;
     background-color: rgb(250, 250, 250);
     left:0;
     right: 0;
     text-align: center;
     z-index: 1;
+    margin: 25px;
+    border-bottom: 1px solid $secondary-color;
 
 
     ul {
@@ -372,7 +374,8 @@ nav.pagination {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(10px, 1fr));
     text-align: center;
-    border-bottom: 1px solid #D9D9D9;
+    border-bottom: 1px solid $secondary-color;
+    border-top: 1px solid $secondary-color;
 
     a, span {
         padding: 15px 0;
@@ -399,9 +402,18 @@ nav.pagination {
 }
  
 article {
-    border-bottom: 1px solid $secondary-color;
+    
+    .thumbnail{
+        height: 242px;
+    }
+
+    &:not(:last-child) {
+        border-bottom: 1px solid $secondary-color;
+    }
 }
  
+
+
 .grid {
     display: -ms-grid;
     display: grid;
@@ -414,8 +426,8 @@ article {
 
     padding: 25px 0;
     grid-template-areas: 
-    "thumbnail"
-    "content";
+    "col1"
+    "col2";
 
     a {
         text-decoration: none;
@@ -423,15 +435,13 @@ article {
             color: $primary-color;
         }
     }
-
 } 
+
 
 .col1 {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
-
-    height: 242px;
-    grid-area: thumbnail;  
+    grid-area: col1;  
     display: block;
 
     img {
@@ -447,9 +457,15 @@ article {
 .col2 {
     -ms-grid-row: 2;
     -ms-grid-column: 1;
-    margin-top: 1em;
+    margin-top: 1em; 
 }
 
+
+.single__page {
+    h1.heading {
+        margin-top: 1em;
+    }
+}
 
 @media screen and (min-width: 736px) {
     .grid {
@@ -478,11 +494,8 @@ article {
 
 
     .social {
-        grid-template-columns: 2fr 1fr;
-        grid-template-areas: 
-        "newsletter networks"; 
-    
-        .networks {
+        padding: 0;
+        .networks { 
             margin-bottom: 0;
 
             img {
@@ -491,12 +504,9 @@ article {
         }
 
         #search__popup {
-            top: 65px;
+            top: 56px;
         } 
-
-     
     }
-
 
 
     .button {

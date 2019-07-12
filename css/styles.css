@@ -138,7 +138,7 @@ input {
   font-family: inherit;
   border: 0;
   font-size: 1.1em;
-  height: 65px;
+  height: 56px;
   padding: 10px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -226,27 +226,21 @@ input::placeholder {
 }
 
 .social {
-  grid-area: social;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-column: 2fr 1fr;
-  -ms-grid-rows: 1fr;
-      grid-template-rows: 1fr;
-      grid-template-areas: "newsletter" "networks";
-  grid-row-gap: 20px;
   border-top: 1px solid #D9D9D9;
   border-bottom: 1px solid #D9D9D9;
   position: relative;
+  padding: 0px !important;
 }
 
-.social .newsletter {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-  grid-area: newsletter;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 2fr 1fr;
-      grid-template-columns: 2fr 1fr;
+.social .newsletter .subscribeinput {
+  width: 67.333%;
+  font-size: 0.9em;
+}
+
+.social .newsletter .subscribebutton {
+  width: 31.3%;
+  float: right;
+  font-size: 0.8em;
 }
 
 .social .newsletter .subscribebutton {
@@ -254,10 +248,15 @@ input::placeholder {
   color: #fff;
 }
 
+.social .newsletter .response {
+  position: absolute;
+  bottom: 56px;
+  background: #000;
+  color: #D9D9D9;
+  padding: 10px;
+}
+
 .social .networks {
-  -ms-grid-row: 2;
-  -ms-grid-column: 1;
-  grid-area: networks;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -268,6 +267,7 @@ input::placeholder {
       -ms-flex-align: center;
           align-items: center;
   margin-bottom: 14px;
+  height: 56px;
 }
 
 .social .networks a, .social .networks span {
@@ -289,7 +289,7 @@ input::placeholder {
   position: absolute;
   left: 0;
   right: 0;
-  top: 134px;
+  top: 122px;
   padding: 10px;
 }
 
@@ -360,12 +360,14 @@ footer {
 #toggleMyMenu {
   font-size: 1.6em;
   position: absolute;
-  top: 206px;
+  top: 155px;
   background-color: #fafafa;
   left: 0;
   right: 0;
   text-align: center;
   z-index: 1;
+  margin: 25px;
+  border-bottom: 1px solid #D9D9D9;
 }
 
 #toggleMyMenu ul {
@@ -389,6 +391,7 @@ nav.pagination {
       grid-template-columns: repeat(auto-fit, minmax(10px, 1fr));
   text-align: center;
   border-bottom: 1px solid #D9D9D9;
+  border-top: 1px solid #D9D9D9;
 }
 
 nav.pagination a, nav.pagination span {
@@ -408,7 +411,11 @@ nav.pagination a, nav.pagination span {
   border: 1px solid #D9D9D9;
 }
 
-article {
+article .thumbnail {
+  height: 242px;
+}
+
+article:not(:last-child) {
   border-bottom: 1px solid #D9D9D9;
 }
 
@@ -421,7 +428,7 @@ article {
       grid-template-rows: 1fr;
   -ms-grid-row: 1fr;
   padding: 25px 0;
-      grid-template-areas: "thumbnail" "content";
+      grid-template-areas: "col1" "col2";
 }
 
 .grid a {
@@ -433,10 +440,9 @@ article {
 }
 
 .col1 {
-  height: 242px;
   -ms-grid-row: 1;
   -ms-grid-column: 1;
-  grid-area: thumbnail;
+  grid-area: col1;
   display: block;
 }
 
@@ -451,6 +457,10 @@ article {
 .col2 {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
+  margin-top: 1em;
+}
+
+.single__page h1.heading {
   margin-top: 1em;
 }
 
@@ -475,9 +485,7 @@ article {
     margin-top: 0em;
   }
   .social {
-    -ms-grid-columns: 2fr 1fr;
-        grid-template-columns: 2fr 1fr;
-        grid-template-areas: "newsletter networks";
+    padding: 0;
   }
   .social .networks {
     margin-bottom: 0;
@@ -486,7 +494,7 @@ article {
     vertical-align: middle;
   }
   .social #search__popup {
-    top: 65px;
+    top: 56px;
   }
   .button {
     display: inline-block;

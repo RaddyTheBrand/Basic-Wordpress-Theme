@@ -13,10 +13,16 @@ function basicSettingsGroup() {
     register_setting('basicSettingsGroup', 'slogan');
     register_setting('basicSettingsGroup', 'author');
     register_setting('basicSettingsGroup', 'footer');
+    register_setting('basicSettingsGroup', 'mailChimp');
+
+    /*Social Networks*/
     register_setting('basicSettingsGroup', 'pp'); 
     register_setting('basicSettingsGroup', 'fb');
     register_setting('basicSettingsGroup', 'twitter');
     register_setting('basicSettingsGroup', 'insta');
+    register_setting('basicSettingsGroup', 'youtube');
+    register_setting('basicSettingsGroup', 'contactEmail');
+    /*Social Networks*/
 }
 
 function basic_theme_settings_page() {
@@ -29,10 +35,15 @@ function basic_theme_settings_page() {
     $optionSlogan = esc_attr(get_option('slogan'));
     $optionAuthor = esc_attr(get_option('author'));
     $optionFooter = esc_attr(get_option('footer'));
+    $optionMailChimp = esc_attr(get_option('mailChimp'));
     $optionPP = esc_attr(get_option('pp'));
+
+    /* Social */
     $optionFb = esc_attr(get_option('fb'));
     $optionTwitter = esc_attr(get_option('twitter'));
     $optionInsta = esc_attr(get_option('insta'));
+    $optionYoutube = esc_attr(get_option('youtube'));
+    $optionContactEmail = esc_attr(get_option('contactEmail'));
     
     if ($optionFooter == "" || $optionFooter == null) {
         $optionFooter = "Created by <a href='https://www.raddy.co.uk'>Raddy</a>";
@@ -55,6 +66,7 @@ function basic_theme_settings_page() {
                     <input placeholder="Example: Everything a writer needs." class="regular-text" type="text" id="slogan" name="slogan" value="<?php echo $optionSlogan; ?>"/>
                 </td>
             </tr>
+
             <tr>
                 <th scope="row">
                     <label>Author</label>
@@ -64,17 +76,29 @@ function basic_theme_settings_page() {
                 </td>
             </tr>
 
+            <tr>
+                <th scope="row">
+                    <label>Mailchimp </label>
+                   
+                </th>
+                <td>
+                    <p>How to find your MailChimp link: Login to your MailChimp account. Click on Audience and then navigate to Signup forms. Click Embedded forms go to the copy/paste section. </p>
+                    <p>Look for the code form action and copy the url inside in starting with https://</p>
+                    <input placeholder="Example: Everything a writer needs." class="regular-text" type="text" id="mailChimp" name="mailChimp" value="<?php echo $optionMailChimp; ?>"/>
+                </td>
+            </tr>
 
             <tr>
                 <th scope="row">
                     <label>Social (Add full URL)</label>
                 </th>
                 <td>
-                    <input placeholder="Facebook" class="regular-text" type="text" id="fb" name="fb" value="<?php echo $optionFb; ?>"/><br>
-                    <input placeholder="Twitter" class="regular-text" type="text" id="twitter" name="twitter" value="<?php echo $optionTwitter; ?>"/><br>
-                    <input placeholder="Instagram" class="regular-text" type="text" id="insta" name="insta" value="<?php echo $optionInsta; ?>"/><br>
+                    <label style="width:100px; display:inline-block;">Facebook:</label><input placeholder="Facebook" class="regular-text" type="text" id="fb" name="fb" value="<?php echo $optionFb; ?>"/><br>
+                    <label style="width:100px; display:inline-block;">Twitter:</label><input placeholder="Twitter" class="regular-text" type="text" id="twitter" name="twitter" value="<?php echo $optionTwitter; ?>"/><br>
+                    <label style="width:100px; display:inline-block;">Instagram: </label><input placeholder="Instagram" class="regular-text" type="text" id="insta" name="insta" value="<?php echo $optionInsta; ?>"/><br>
+                    <label style="width:100px; display:inline-block;">YouTube: </label><input placeholder="YouTube" class="regular-text" type="text" id="youtube" name="youtube" value="<?php echo $optionYoutube; ?>"/><br>
+                    <label style="width:100px; display:inline-block;">Email:       </label><input placeholder="Email" class="regular-text" type="text" id="contactEmail" name="contactEmail" value="<?php echo $optionContactEmail; ?>"/><br>
                 </td>
-                
             </tr> 
 
             <tr>

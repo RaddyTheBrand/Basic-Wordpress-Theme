@@ -46,11 +46,6 @@ function get_excerpt( $count ) {
 }
 
 
-
-
-
-
-
 require_once( get_template_directory() . '/functions/theme-options.php' );
 
 // Support for custom Logo

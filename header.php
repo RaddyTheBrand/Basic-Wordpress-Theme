@@ -12,14 +12,14 @@
 
     <div class="header">
         <?php 
-            if ( function_exists( 'the_custom_logo') == '' ) {
+            if ( function_exists( 'the_custom_logo') !== '' ) {
                 the_custom_logo();
             }
             else {
                 /*Link to homepage */ 
-                ?>
+            ?>
                 <h1><a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a></h1>
-                <?php
+            <?php
             } 
         ?>
         <div class="mobile-menu">
@@ -46,4 +46,3 @@
     ?>
     
     </div>
-    <div class="container"> 
