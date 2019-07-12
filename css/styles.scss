@@ -160,7 +160,7 @@ input {
     position: relative;
 }
 
-.header {
+header {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
@@ -284,6 +284,17 @@ input {
 
 .container{
     grid-area: container;
+
+    .hero__image {
+        height: 300px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            -o-object-fit: cover;
+            object-fit: cover;
+        }
+    }
 }
 
 .single__article {

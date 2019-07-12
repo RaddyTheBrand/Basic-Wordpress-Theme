@@ -3,7 +3,7 @@
     if(have_posts()) {
     while(have_posts()) : the_post();
 ?>
-<div class="container single__page">
+<main class="container single__page">
     <?php the_post_thumbnail('medium'); ?>
     <h1 class="heading"><?php the_title(); ?></h1>
     <?php the_content();?>
@@ -12,5 +12,5 @@
     endwhile; } 
     require_once( get_template_directory() . '/include/social.php' );
 ?>
-</div>
+</main>
 <?php get_footer(); ?>

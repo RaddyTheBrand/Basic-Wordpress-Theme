@@ -170,7 +170,7 @@ input::placeholder {
   position: relative;
 }
 
-.header {
+header {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
@@ -181,12 +181,12 @@ input::placeholder {
   padding: 40px 0;
 }
 
-.header a {
+header a {
   text-decoration: none;
   cursor: pointer;
 }
 
-.header h1 {
+header h1 {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: logo;
@@ -314,6 +314,17 @@ input::placeholder {
 
 .container {
   grid-area: container;
+}
+
+.container .hero__image {
+  height: 300px;
+}
+
+.container .hero__image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 
 .single__article {

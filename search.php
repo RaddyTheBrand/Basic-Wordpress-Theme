@@ -6,7 +6,6 @@ Template Name: Search Page
 get_header();
 ?>
 
-
 <?php
     global $query_string;
     $query_args = explode("&", $query_string);
@@ -22,7 +21,7 @@ get_header();
     ?>
     <!-- the loop -->
 
-	<div class="container search__results">
+	<main class="container search__results">
     <h1 class="heading">Search Results...</h1>
     <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 		<article>
@@ -39,14 +38,12 @@ get_header();
 		</article>
     <?php endwhile; ?>
 
-	</div>
     <!-- end of the loop -->
-
     <?php wp_reset_postdata(); ?>
 
 	<?php else : ?>
 		<h1><?php _e( 'Sorry, no posts matched your criteria.' ); ?></h1>
 	<?php endif; ?>
-
+	</main>
 
 <?php get_footer();

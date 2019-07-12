@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<div class="container"> 
+<main class="container"> 
 
 <div class="author grid">
     <div class="author-image col1"><img class="objFit" src="<?php echo get_template_directory_uri(); ?>/images/author.jpg" alt="Author Name"/></div>
@@ -45,7 +45,7 @@
 </article>
 
 <?php endwhile; } ?>
-</div>
+</main>
 
 <?php
 if ( function_exists( 'paginate_links') !== '' ) {
