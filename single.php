@@ -3,7 +3,7 @@
     if(have_posts()) {
         while(have_posts()) : the_post();
 ?>
-<h1 style="color:red;">Single.php</h1>
+<!-- <h1 style="color:red;">Single.php</h1> -->
 <main class="row single-page">
     <?php if ( has_post_thumbnail() ) { ?>
     <div class="hero-image">

@@ -218,6 +218,7 @@ input[type="submit"] {
           box-sizing: border-box;
   -webkit-appearance: none;
   border-radius: 0;
+  border: 1px solid #000;
 }
 
 textarea::-webkit-input-placeholder,
@@ -312,6 +313,10 @@ header a {
   border-bottom: 1px solid #D9D9D9;
   position: relative;
   padding: 0px !important;
+}
+
+.social .newsletter textarea, .social .newsletter input[type="text"], .social .newsletter input[type="email"], .social .newsletter input[type="button"], .social .newsletter input[type="submit"] {
+  border: 0;
 }
 
 .social .newsletter .subscribeinput {
@@ -523,6 +528,23 @@ article:not(:last-child) {
   -o-object-fit: cover;
   object-fit: cover;
   display: block;
+}
+
+.single-page .wpcf7-form input, .single-page .wpcf7-form textarea {
+  width: 100%;
+}
+
+.single-page .wpcf7-form label {
+  font-family: 'Raleway', sans-serif;
+}
+
+.single-page .wpcf7-form .wpcf7-form-control-wrap {
+  margin-left: -20px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.single-page .wpcf7-form .wpcf7-textarea {
+  height: 250px;
 }
 
 .single__article {

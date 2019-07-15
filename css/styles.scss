@@ -185,9 +185,10 @@ input[type="submit"] {
     height: 56px;
     padding: 10px;
     box-sizing: border-box;
-    // width: 100%;
+    // width: 100%; 
     -webkit-appearance: none;
     border-radius: 0;
+    border: 1px solid $primary-color;
 
     &::placeholder {
         color: $secondary-color;
@@ -257,9 +258,12 @@ header {
     position: relative;
     padding: 0px!important;
 
-
     .newsletter {
-        
+
+        textarea, input[type="text"], input[type="email"], input[type="button"], input[type="submit"] {
+            border:0;
+        }
+
         .subscribeinput {
             width: 67.333%;
             font-size: 0.9em;
@@ -477,6 +481,23 @@ nav.pagination {
             display: block;
         }
     } 
+
+    .wpcf7-form {
+        input, textarea {
+            width: 100%;
+        }
+        label {
+            font-family: 'Raleway', sans-serif;
+        }
+        .wpcf7-form-control-wrap {
+            margin-left: -20px;
+            font-family: 'Raleway', sans-serif;
+        }
+        .wpcf7-textarea {
+            height: 250px;
+        }
+    }
+    
 }
 
 
@@ -493,6 +514,7 @@ nav.pagination {
         object-fit: cover;
     }
 }
+
 
 
 
