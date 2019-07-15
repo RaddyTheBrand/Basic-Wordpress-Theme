@@ -11,21 +11,27 @@
 <div class="wrapper">
 
     <header>
-        <?php 
+        <div class="row">
+            <div class="col-6 col-s-6">
+            <?php 
             if ( function_exists( 'the_custom_logo') !== '' ) {
                 the_custom_logo();
             }
             else {
                 /*Link to homepage */ 
             ?>
-                <h1><a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a></h1>
+            <h1><a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a></h1>
             <?php
             } 
-        ?>
-        <div class="mobile-menu">
-            <span class="open__burger"><img src="<?php echo get_template_directory_uri(); ?>/images/menu.svg" alt="Menu"/>Menu</span>
-            <span class="close__burger"><img src="<?php echo get_template_directory_uri(); ?>/images/menu_close.svg" alt="Close"/>Close</span>
-        </div>
+            ?>
+            </div>
+            <div class="col-6 col-s-6">
+                <div class="mobile-menu">
+                    <span class="open__burger"><img src="<?php echo get_template_directory_uri(); ?>/images/menu.svg" alt="Menu"/>Menu</span>
+                    <span class="close__burger"><img src="<?php echo get_template_directory_uri(); ?>/images/menu_close.svg" alt="Close"/>Close</span>
+                </div>
+            </div>
+            </div> 
         </header>
     
     <nav id="toggleMyMenu" style="display: none;">
@@ -36,13 +42,14 @@
         ?>
     </nav>
   
-    <div class="slogan">
-    <?php
+    <div class="row slogan">
+        <div class="col-12">
+        <?php
         $optionSlogan = get_option('slogan'); 
         if ($optionSlogan == "" || $optionSlogan == null) {
             $optionSlogan = "Edit this by going to your Dashboard -> Theme Options -> Slogan";
         }
         echo $optionSlogan;
-    ?>
-    
+        ?>
+        </div>
     </div>

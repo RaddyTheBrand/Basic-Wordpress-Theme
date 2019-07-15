@@ -2,7 +2,6 @@
 /*
 Template Name: Search Page
 */
-
 get_header();
 ?>
 
@@ -24,18 +23,28 @@ get_header();
 	<main class="container search__results">
     <h1 class="heading">Search Results...</h1>
     <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-		<article>
-		<a href="<?php the_permalink();?>">
-		<div class="thumbnail">
-			<?php the_post_thumbnail('medium'); ?>
-		</div>
-		<div class="content">
-			<h2><?php the_title(); ?></h2>
-			<p><?php the_excerpt(); ?></p>
-			<a class="button" href="<?php the_permalink();?>">More +</a>
-		</div>
-		</a>
-		</article>
+	<article class="row row-padding">
+        <div class="col-6 thumbnail">
+            <a href="<?php the_permalink();?>">
+            <?php  
+                if ( has_post_thumbnail() ) {
+                    the_post_thumbnail('medium', ['class' => 'objFit'], array('title' => get_the_title() ));
+                }
+                else {
+                echo '<img src="' . get_bloginfo( 'stylesheet_directory' ) 
+                . '/images/thumbnail-default.jpg" alt="Missing Image"/>';
+                }
+            ?>
+            </a>
+        </div> 
+        <div class="col-6 content">
+            <a href="<?php the_permalink();?>">
+                <h2><?php the_title(); ?></h2>
+                <p><?php echo get_excerpt(186); ?></p>
+                <span class="button" href="#">More +</span>
+            </a>
+        </div>
+	</article>
     <?php endwhile; ?>
 
     <!-- end of the loop -->
