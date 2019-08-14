@@ -296,6 +296,10 @@ header a {
   border-bottom: 1px solid #D9D9D9;
 }
 
+.author {
+  border-bottom: 1px solid #D9D9D9;
+}
+
 .author .author-image {
   padding-top: 22px;
 }
@@ -309,7 +313,6 @@ header a {
 }
 
 .social {
-  border-top: 1px solid #D9D9D9;
   border-bottom: 1px solid #D9D9D9;
   position: relative;
   padding: 0px !important;
@@ -357,6 +360,7 @@ header a {
 }
 
 .social .networks a, .social .networks span {
+  padding: 3px;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;

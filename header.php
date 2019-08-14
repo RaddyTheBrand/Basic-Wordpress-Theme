@@ -44,12 +44,14 @@
   
     <div class="row slogan">
         <div class="col-12">
-        <?php
-        $optionSlogan = get_option('slogan'); 
-        if ($optionSlogan == "" || $optionSlogan == null) {
-            $optionSlogan = "Edit this by going to your Dashboard -> Theme Options -> Slogan";
+        <?php $slogan = get_bloginfo('description'); ?>
+        <?php 
+        if ( $slogan!='' ) { 
+            bloginfo('description'); 
+        } 
+        else {
+            echo "Edit this by going to your Dashboard -> Appearance -> Custinuse -> Site Identity";
         }
-        echo $optionSlogan;
         ?>
         </div>
     </div>

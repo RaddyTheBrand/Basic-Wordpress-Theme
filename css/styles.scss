@@ -240,6 +240,7 @@ header {
 }
 
 .author {
+    border-bottom: 1px solid $secondary-color;
     .author-image {
         padding-top: ($row-padding + $row-padding);
     
@@ -253,7 +254,6 @@ header {
 }
  
 .social {
-    border-top: 1px solid $secondary-color;
     border-bottom: 1px solid $secondary-color;
     position: relative;
     padding: 0px!important;
@@ -282,7 +282,7 @@ header {
             color: $secondary-color;
             padding: 10px;
         }
-    }
+    } 
 
     .networks {
         display: flex;
@@ -290,8 +290,9 @@ header {
         align-items: center;
         
         height: 56px;
-
+ 
         a, span {
+            padding: 3px;
             flex-grow: 1;
             text-align: center;
             flex-basis: 0;

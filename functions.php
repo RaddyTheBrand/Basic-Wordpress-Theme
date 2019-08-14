@@ -46,7 +46,7 @@ function get_excerpt( $count ) {
 }
 
 
-require_once( get_template_directory() . '/functions/theme-options.php' );
+
 
 // Support for custom Logo
 add_theme_support( 'custom-logo' );
@@ -62,4 +62,6 @@ add_theme_support( 'custom-logo', $defaults );
 }
 add_action( 'after_setup_theme', 'themename_custom_logo_setup' );
 
-?>
+
+require_once( get_template_directory() . '/functions/theme-options.php' );
+

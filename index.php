@@ -1,17 +1,27 @@
 <?php get_header(); ?>
 
+
+<?php if (get_theme_mod('basic-author-callout-display') == 'Yes') { ?>
 <div class="row row-padding author">
-    <div class="col-6 author-image"><img src="<?php echo get_template_directory_uri(); ?>/images/author.jpg" alt="Author Name"/></div>
+    <div class="col-6 author-image">
+    <img src="<?php echo wp_get_attachment_url(get_theme_mod('basic-author-callout-image')) ?>">
+    </div>
     <div class="col-6 author-content">
         <?php 
-            $optionAuthor = get_option('author');
-            if($optionAuthor == "" || $optionAuthor == null) {
-                $optionAuthor = "Hey, you need to edit this by going to your Dashboard -> Theme Options. Change the Author field and save.";
+
+            $authorText = get_theme_mod('basic-author-callout-text');
+
+            if ($authorText != '') {
+                echo wpautop($authorText);
             }
-            echo $optionAuthor;
+            else {
+                echo "Edit this by going to your Dashboard -> Appearance -> Customise -> Author Editor";
+            }
+            
         ?>
     </div>
 </div> 
+<?php } ?>
  
 
 <main class="container"> 
@@ -41,7 +51,7 @@
             <a href="<?php the_permalink();?>">
                 <h2><?php the_title(); ?></h2>
                 <p><?php echo get_excerpt(186); ?></p>
-                <span class="button" href="#">More +</span>
+                <span class="button">More +</span>
             </a>
         </div>
 </article>

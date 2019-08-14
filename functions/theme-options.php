@@ -1,133 +1,292 @@
 <?php
-/* Add Theme Settings */
-add_action("admin_menu", "setup_theme_admin_menus");
 
-function setup_theme_admin_menus() {
-    // add_options_page( 'Theme Settings', 'Basic Theme', 'manage_options', 'basic_theme_settings', 'basic_theme_settings_page');
-    add_menu_page( 'Theme Settings', 'Basic Theme', 'manage_options', 'basic_theme_settings', 'basic_theme_settings_page', get_stylesheet_directory_uri() . '/images/logo_icon.png', 2);
-    add_action('admin_init', 'basicSettingsGroup');
+/* Theme Customizer Settings */
+/* ------------------------- */
+/* Theme Customizer Settings */
+
+/* Author */ 
+function basic_author_callout($wp_customize) {
+    $wp_customize->add_section('basic-author-callout-section', array(
+        'title' => 'Author',
+        'priority' => 2,
+    ));
+
+    $wp_customize->add_setting('basic-author-callout-display', array(
+        'default' => 'No'
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'basic-author-callout-display-control', array(
+        'label' => 'Display this section?',
+        'section' => 'basic-author-callout-section',
+        'settings' => 'basic-author-callout-display',
+        'type' => 'select',
+        'choices' => array('No' => 'No', 'Yes' => 'Yes')
+    )));
+
+
+    $wp_customize->add_setting('basic-author-callout-text', array(
+        'default' => 'Example Slogan Text!'
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'basic-author-callout-control', array(
+        'label' => 'About Author',
+        'section' => 'basic-author-callout-section',
+        'settings' => 'basic-author-callout-text',
+        'type' => 'textarea'
+    )));
+
+
+    $wp_customize->add_setting('basic-author-callout-image', array(
+        'default' => 'Example Slogan Text!'
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize, 'basic-author-callout-image-control', array(
+        'label' => 'Image',
+        'section' => 'basic-author-callout-section',
+        'settings' => 'basic-author-callout-image',
+        'width' => 264,
+        'height' => 176
+    )));
+
 }
 
-/* Register Group Settings */
-function basicSettingsGroup() {
-    register_setting('basicSettingsGroup', 'slogan');
-    register_setting('basicSettingsGroup', 'author');
-    register_setting('basicSettingsGroup', 'footer');
-    register_setting('basicSettingsGroup', 'mailChimp');
+add_action('customize_register', 'basic_author_callout');
 
-    /*Social Networks*/
-    register_setting('basicSettingsGroup', 'pp'); 
-    register_setting('basicSettingsGroup', 'fb');
-    register_setting('basicSettingsGroup', 'twitter');
-    register_setting('basicSettingsGroup', 'insta');
-    register_setting('basicSettingsGroup', 'youtube');
-    register_setting('basicSettingsGroup', 'contactEmail');
-    /*Social Networks*/
+/* Social */
+function basic_social_callout($wp_customize) {
+    $wp_customize->add_section('basic-social-callout-section', array(
+        'title' => 'Social',
+        'priority' => 3,
+        'description' => __('Leave blank if you dont want a social network to be displayed.'),
+    ));
+
+    $wp_customize->add_setting('basic-social-callout-display', array(
+        'default' => 'No'
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'basic-social-callout-display-control', array(
+        'label' => 'Display this section?',
+        'section' => 'basic-social-callout-section',
+        'settings' => 'basic-social-callout-display',
+        'type' => 'select',
+        'choices' => array('No' => 'No', 'Yes' => 'Yes'),
+    ))); 
+
+
+    /* MailChimp */
+    $wp_customize->add_setting('basic-social-callout-mailchimp', array(
+        'default' => 'MailChimp Username',
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'basic-social-callout-control-mailchimp', array(
+        'label' => 'MailChimp URL',
+        'section' => 'basic-social-callout-section',
+        'settings' => 'basic-social-callout-mailchimp',
+        'description' => __('
+        Adding MailChimp Username will create the Subscribe functionality for you.
+        How to get your MailChimp Form ID: Login to Mailchimp. Naviage to Audience and then click on "Add a pop-up form". Create a "Embedded form" and untick everything except Show only required fields.
+        At this point the link that you need to copy will appear in the Copy/paste section. Find the html tag that starts with <form action= and then copy the link in the quotes.
+        Paste the link in the input below.
+        '),
+    )));
+
+
+    /* Facebook */
+    $wp_customize->add_setting('basic-social-callout-facebook', array(
+        'default' => 'https://www.facebook.com/Username'
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'basic-social-callout-control-facebook', array(
+        'label' => 'Facebook URL',
+        'section' => 'basic-social-callout-section',
+        'settings' => 'basic-social-callout-facebook',
+        'type' => 'url',
+    )));
+
+    /* Instagram */
+    $wp_customize->add_setting('basic-social-callout-instagram', array(
+        'default' => 'https://www.instagram.com/Username'
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'basic-social-callout-control-instagram', array(
+        'label' => 'Instagram URL',
+        'section' => 'basic-social-callout-section',
+        'settings' => 'basic-social-callout-instagram',
+        'type' => 'url',
+    )));
+
+
+    /* Pinterest */
+    $wp_customize->add_setting('basic-social-callout-pinterest', array(
+        'default' => 'Pinterest Username'
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'basic-social-callout-control-pinterest', array(
+        'label' => 'Pinterest',
+        'section' => 'basic-social-callout-section',
+        'settings' => 'basic-social-callout-pinterest',
+    )));
+
+
+    /* RSS */
+    $wp_customize->add_setting('basic-social-callout-rss', array(
+        'default' => 'RSS'
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'basic-social-callout-control-rss', array(
+        'label' => 'RSS URL',
+        'section' => 'basic-social-callout-section',
+        'settings' => 'basic-social-callout-rss',
+        'type' => 'url',
+    )));
+
+    /* Skype */
+    $wp_customize->add_setting('basic-social-callout-skype', array(
+        'default' => 'Username'
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'basic-social-callout-control-skype', array(
+        'label' => 'Skype',
+        'section' => 'basic-social-callout-section',
+        'settings' => 'basic-social-callout-skype',
+        'type' => 'url',
+    )));
+
+    /* Snapchat */
+    $wp_customize->add_setting('basic-social-callout-snapchat', array(
+        'default' => 'Snapchat Username'
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'basic-social-callout-control-snapchat', array(
+        'label' => 'Snapchat',
+        'section' => 'basic-social-callout-section',
+        'settings' => 'basic-social-callout-snapchat',
+    )));
+
+
+    /* Twitter */
+    $wp_customize->add_setting('basic-social-callout-twitter', array(
+        'default' => 'https://twitter.com/Username'
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'basic-social-callout-control-twitter', array(
+        'label' => 'Twitter URL',
+        'section' => 'basic-social-callout-section',
+        'settings' => 'basic-social-callout-twitter',
+        'type' => 'url',
+    )));
+
+    /* WeChat */
+    $wp_customize->add_setting('basic-social-callout-wechat', array(
+        'default' => 'WeChat Username'
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'basic-social-callout-control-wechat', array(
+        'label' => 'WeChat',
+        'section' => 'basic-social-callout-section',
+        'settings' => 'basic-social-callout-wechat',
+        'type' => 'url',
+    )));
+
+    /* WhatsApp */
+    $wp_customize->add_setting('basic-social-callout-whatsapp', array(
+        'default' => 'Phone Number'
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'basic-social-callout-control-whatsapp', array(
+        'label' => 'WhatsApp Phone Number',
+        'section' => 'basic-social-callout-section',
+        'settings' => 'basic-social-callout-whatsapp',
+        'type' => 'url',
+    )));
+
+
+    /* YouTube */
+    $wp_customize->add_setting('basic-social-callout-youtube', array(
+        'default' => 'https://www.youtube.com/Username'
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'basic-social-callout-control-youtube', array(
+        'label' => 'YouTube URL',
+        'section' => 'basic-social-callout-section',
+        'settings' => 'basic-social-callout-youtube',
+        'type' => 'url',
+    )));
+
+    /* Email */
+    $wp_customize->add_setting('basic-social-callout-email', array(
+        'default' => 'youremail@email.com'
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'basic-social-callout-control-email', array(
+        'label' => 'Facebook URL',
+        'section' => 'basic-social-callout-section',
+        'settings' => 'basic-social-callout-email',
+        'type' => 'url',
+    )));
+
+
 }
 
-function basic_theme_settings_page() {
-    if(!current_user_can('manage_options')) {
-        wp_die('No sufficient premissions to access this page.');
-    }
-    echo '<h1>Basic Theme Settings</h1>';
+add_action('customize_register', 'basic_social_callout');
 
-    /*Group Options*/
-    $optionSlogan = esc_attr(get_option('slogan'));
-    $optionAuthor = esc_attr(get_option('author'));
-    $optionFooter = esc_attr(get_option('footer'));
-    $optionMailChimp = esc_attr(get_option('mailChimp'));
-    $optionPP = esc_attr(get_option('pp'));
 
-    /* Social */
-    $optionFb = esc_attr(get_option('fb'));
-    $optionTwitter = esc_attr(get_option('twitter'));
-    $optionInsta = esc_attr(get_option('insta'));
-    $optionYoutube = esc_attr(get_option('youtube'));
-    $optionContactEmail = esc_attr(get_option('contactEmail'));
-    
-    if ($optionFooter == "" || $optionFooter == null) {
-        $optionFooter = "Created by <a href='https://www.raddy.co.uk'>Raddy</a>";
-    }
-    ?>
 
-    <div class="wrap">
-    <h1>Theme Settings</h1>
-    <form method="post" action="options.php">
-        <?php settings_fields('basicSettingsGroup');?>
+/* Footer */ 
+function basic_footer_callout($wp_customize) {
+    $wp_customize->add_section('basic-footer-callout-section', array(
+        'title' => 'Footer',
+        'priority' => 4,
+    ));
 
-        <table class="form-table">
-            <tbody>
- 
-            <tr>
-                <th scope="row">
-                    <label>Slogan</label>
-                </th>
-                <td> 
-                    <input placeholder="Example: Everything a writer needs." class="regular-text" type="text" id="slogan" name="slogan" value="<?php echo $optionSlogan; ?>"/>
-                </td>
-            </tr>
 
-            <tr>
-                <th scope="row">
-                    <label>Author</label>
-                </th>
-                <td>
-                    <textarea rows="10" cols="60" placeholder="Write a simple introduction about yourself..." class="regular-text" type="text" id="author" name="author"><?php echo $optionAuthor; ?></textarea>
-                </td>
-            </tr>
+    $wp_customize->add_setting('basic-footer-callout-display', array(
+        'default' => 'No'
+    ));
 
-            <tr>
-                <th scope="row">
-                    <label>Mailchimp </label>
-                   
-                </th>
-                <td>
-                    <p>How to find your MailChimp link: Login to your MailChimp account. Click on Audience and then navigate to Signup forms. Click Embedded forms go to the copy/paste section. </p>
-                    <p>Look for the code form action and copy the url inside in starting with https://</p>
-                    <input placeholder="Example: Everything a writer needs." class="regular-text" type="text" id="mailChimp" name="mailChimp" value="<?php echo $optionMailChimp; ?>"/>
-                </td>
-            </tr>
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'basic-footer-callout-display-control', array(
+        'label' => 'Display Policy section?',
+        'section' => 'basic-footer-callout-section',
+        'settings' => 'basic-footer-callout-display',
+        'type' => 'select',
+        'choices' => array('No' => 'No', 'Yes' => 'Yes'),
+    ))); 
 
-            <tr>
-                <th scope="row">
-                    <label>Social (Add full URL)</label>
-                </th>
-                <td>
-                    <label style="width:100px; display:inline-block;">Facebook:</label><input placeholder="Facebook" class="regular-text" type="text" id="fb" name="fb" value="<?php echo $optionFb; ?>"/><br>
-                    <label style="width:100px; display:inline-block;">Twitter:</label><input placeholder="Twitter" class="regular-text" type="text" id="twitter" name="twitter" value="<?php echo $optionTwitter; ?>"/><br>
-                    <label style="width:100px; display:inline-block;">Instagram: </label><input placeholder="Instagram" class="regular-text" type="text" id="insta" name="insta" value="<?php echo $optionInsta; ?>"/><br>
-                    <label style="width:100px; display:inline-block;">YouTube: </label><input placeholder="YouTube" class="regular-text" type="text" id="youtube" name="youtube" value="<?php echo $optionYoutube; ?>"/><br>
-                    <label style="width:100px; display:inline-block;">Email:       </label><input placeholder="Email" class="regular-text" type="text" id="contactEmail" name="contactEmail" value="<?php echo $optionContactEmail; ?>"/><br>
-                </td>
-            </tr> 
 
-            <tr>
-                <th scope="row">
-                    <label>Privacy Policy</label>
-                </th>
-                <td>
-                    <textarea rows="10" cols="60" placeholder="Add links to privacy policy documents" class="regular-text" type="text" id="author" name="pp"><?php echo $optionPP; ?></textarea>
-                </td>
-            </tr>
+    $wp_customize->add_setting('basic-footer-callout-privacy-policy', array(
+        'default' => '/privacy'
+    ));
 
-            <tr>
-                <th scope="row">
-                    <label>Footer</label>
-                </th>
-                <td>
-                    <input class="regular-text" type="text" id="footer" name="footer" value="<?php echo $optionFooter; ?>"/>
-                </td>
-            </tr>
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'basic-footer-callout-privacy-control', array(
+        'label' => 'Privacy Policy URL',
+        'section' => 'basic-footer-callout-section',
+        'settings' => 'basic-footer-callout-privacy-policy',
+        'description' => 'You can add custom URL for your Privacy page. Default is set to /privacy',
+    )));
 
-            <tr>
-                <th>Would you like to save the changes?</th>
-                <td><?php submit_button('Save Changes'); ?></td>
-            </tr>
-            </tbody>
-        </table>
-    </form>
+    $wp_customize->add_setting('basic-footer-callout-cookie-policy', array(
+        'default' => '/cookie-policy'
+    ));
 
-    </div>
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'basic-footer-callout-cookie-control', array(
+        'label' => 'Privacy Policy URL',
+        'section' => 'basic-footer-callout-section',
+        'settings' => 'basic-footer-callout-cookie-policy',
+        'description' => 'You can add custom URL for your Cookie Policy page. Default is set to /cookie-policy',
+    )));
 
-    <?php
+    $wp_customize->add_setting('basic-footer-callout-copyright', array(
+        'default' => '&copy; 2019'
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'basic-footer-callout-control', array(
+        'label' => 'Copyright',
+        'section' => 'basic-footer-callout-section',
+        'settings' => 'basic-footer-callout-copyright',
+        'type' => 'textarea'
+    )));
+
+
 }
+
+add_action('customize_register', 'basic_footer_callout');
