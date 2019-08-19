@@ -34,10 +34,12 @@ function basic_author_callout($wp_customize) {
         'settings' => 'basic-author-callout-text',
         'type' => 'textarea'
     )));
-
+ 
 
     $wp_customize->add_setting('basic-author-callout-image', array(
-        'default' => 'Example Slogan Text!'
+        'default' => '',
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
     ));
 
     $wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize, 'basic-author-callout-image-control', array(
@@ -75,7 +77,7 @@ function basic_social_callout($wp_customize) {
 
     /* MailChimp */
     $wp_customize->add_setting('basic-social-callout-mailchimp', array(
-        'default' => 'MailChimp Username',
+        'default' => '',
     ));
 
     $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'basic-social-callout-control-mailchimp', array(
@@ -93,7 +95,7 @@ function basic_social_callout($wp_customize) {
 
     /* Facebook */
     $wp_customize->add_setting('basic-social-callout-facebook', array(
-        'default' => 'https://www.facebook.com/Username'
+        'default' => ''
     ));
 
     $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'basic-social-callout-control-facebook', array(
@@ -105,7 +107,7 @@ function basic_social_callout($wp_customize) {
 
     /* Instagram */
     $wp_customize->add_setting('basic-social-callout-instagram', array(
-        'default' => 'https://www.instagram.com/Username'
+        'default' => ''
     ));
 
     $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'basic-social-callout-control-instagram', array(
@@ -118,7 +120,7 @@ function basic_social_callout($wp_customize) {
 
     /* Pinterest */
     $wp_customize->add_setting('basic-social-callout-pinterest', array(
-        'default' => 'Pinterest Username'
+        'default' => ''
     ));
 
     $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'basic-social-callout-control-pinterest', array(
@@ -130,7 +132,7 @@ function basic_social_callout($wp_customize) {
 
     /* RSS */
     $wp_customize->add_setting('basic-social-callout-rss', array(
-        'default' => 'RSS'
+        'default' => ''
     ));
 
     $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'basic-social-callout-control-rss', array(
@@ -142,7 +144,7 @@ function basic_social_callout($wp_customize) {
 
     /* Skype */
     $wp_customize->add_setting('basic-social-callout-skype', array(
-        'default' => 'Username'
+        'default' => ''
     ));
 
     $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'basic-social-callout-control-skype', array(
@@ -154,7 +156,7 @@ function basic_social_callout($wp_customize) {
 
     /* Snapchat */
     $wp_customize->add_setting('basic-social-callout-snapchat', array(
-        'default' => 'Snapchat Username'
+        'default' => ''
     ));
 
     $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'basic-social-callout-control-snapchat', array(
@@ -166,7 +168,7 @@ function basic_social_callout($wp_customize) {
 
     /* Twitter */
     $wp_customize->add_setting('basic-social-callout-twitter', array(
-        'default' => 'https://twitter.com/Username'
+        'default' => ''
     ));
 
     $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'basic-social-callout-control-twitter', array(
@@ -178,7 +180,7 @@ function basic_social_callout($wp_customize) {
 
     /* WeChat */
     $wp_customize->add_setting('basic-social-callout-wechat', array(
-        'default' => 'WeChat Username'
+        'default' => ''
     ));
 
     $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'basic-social-callout-control-wechat', array(
@@ -190,7 +192,7 @@ function basic_social_callout($wp_customize) {
 
     /* WhatsApp */
     $wp_customize->add_setting('basic-social-callout-whatsapp', array(
-        'default' => 'Phone Number'
+        'default' => ''
     ));
 
     $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'basic-social-callout-control-whatsapp', array(
@@ -203,7 +205,7 @@ function basic_social_callout($wp_customize) {
 
     /* YouTube */
     $wp_customize->add_setting('basic-social-callout-youtube', array(
-        'default' => 'https://www.youtube.com/Username'
+        'default' => ''
     ));
 
     $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'basic-social-callout-control-youtube', array(
@@ -215,11 +217,11 @@ function basic_social_callout($wp_customize) {
 
     /* Email */
     $wp_customize->add_setting('basic-social-callout-email', array(
-        'default' => 'youremail@email.com'
+        'default' => ''
     ));
 
     $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'basic-social-callout-control-email', array(
-        'label' => 'Facebook URL',
+        'label' => 'Email Address',
         'section' => 'basic-social-callout-section',
         'settings' => 'basic-social-callout-email',
         'type' => 'url',
@@ -285,8 +287,165 @@ function basic_footer_callout($wp_customize) {
         'settings' => 'basic-footer-callout-copyright',
         'type' => 'textarea'
     )));
-
-
 }
 
 add_action('customize_register', 'basic_footer_callout');
+
+
+ 
+
+function theme_customize_register( $wp_customize ) {
+    // Text color
+    $wp_customize->add_setting( 'text_color', array(
+      'default'   => '',
+      'transport' => 'refresh',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'text_color', array(
+      'section' => 'colors',
+      'label'   => esc_html__( 'Text color', 'theme' ),
+    ) ) );
+
+    // Link color
+    $wp_customize->add_setting( 'link_color', array(
+      'default'   => '',
+      'transport' => 'refresh',
+      'sanitize_callback' => 'sanitize_hex_color',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'link_color', array(
+      'section' => 'colors',
+      'label'   => esc_html__( 'Link color', 'theme' ),
+    ) ) );
+
+    // Accent color
+    $wp_customize->add_setting( 'accent_color', array(
+      'default'   => '',
+      'transport' => 'refresh',
+      'sanitize_callback' => 'sanitize_hex_color',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'accent_color', array(
+      'section' => 'colors',
+      'label'   => esc_html__( 'Accent color', 'theme' ),
+    ) ) );
+
+    // Background color
+    $wp_customize->add_setting( 'custom_background_color', array(
+        'default'   => '',
+        'transport' => 'refresh',
+        'sanitize_callback' => 'sanitize_hex_color',
+      ) );
+  
+      $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'custom_background_color', array(
+        'section' => 'colors',
+        'label'   => esc_html__( 'Background color', 'theme' ),
+      ) ) );
+
+    // Wrapper color
+    $wp_customize->add_setting( 'wrapper_background_color', array(
+        'default'   => '',
+        'transport' => 'refresh',
+        'sanitize_callback' => 'sanitize_hex_color',
+      ) );
+  
+      $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'wrapper_background_color', array(
+        'section' => 'colors',
+        'label'   => esc_html__( 'Wrapper color', 'theme' ),
+      ) ) );
+
+    // Social Icon color
+    $wp_customize->add_setting( 'social_icon_color', array(
+        'default'   => '',
+        'transport' => 'refresh',
+        'sanitize_callback' => 'sanitize_hex_color',
+      ) );
+  
+      $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'social_icon_color', array(
+        'section' => 'colors',
+        'label'   => esc_html__( 'Social Icons color', 'theme' ),
+      ) ) );
+  }
+
+  add_action( 'customize_register', 'theme_customize_register' );
+
+
+  function theme_get_customizer_css() {
+    ob_start();
+
+    $text_color = get_theme_mod( 'text_color', '' );
+    if ( ! empty( $text_color ) ) {
+      ?>
+      body {
+        color: <?php echo $text_color; ?>;
+      }
+      <?php
+    }
+
+    $link_color = get_theme_mod( 'link_color', '' );
+    if ( ! empty( $link_color ) ) {
+      ?>
+      a {
+        color: <?php echo $link_color; ?>;
+        border-bottom-color: <?php echo $link_color; ?>;
+      }
+      <?php
+    }
+
+    $accent_color = get_theme_mod( 'accent_color', '' );
+    if ( ! empty( $accent_color ) ) {
+      ?>
+      a:hover {
+        color: <?php echo $accent_color; ?>;
+        border-bottom-color: <?php echo $accent_color; ?>;
+      }
+
+      button,
+      input[type="submit"] {
+        background-color: <?php echo $accent_color; ?>;
+      }
+      <?php
+    }
+
+    $custom_background_color = get_theme_mod( 'custom_background_color', '' );
+    if ( ! empty( $custom_background_color ) ) {
+      ?>
+      body {
+        background-color: <?php echo $custom_background_color; ?>;
+      }
+      <?php
+    }
+
+    $wrapper_background_color = get_theme_mod( 'wrapper_background_color', '' );
+    if ( ! empty( $wrapper_background_color ) ) {
+      ?>
+      .wrapper {
+        background-color: <?php echo $wrapper_background_color; ?>;
+      }
+      <?php
+    }
+
+    $social_icon_color = get_theme_mod( 'social_icon_color', '' );
+    if ( ! empty( $social_icon_color ) ) {
+      ?>
+      .social-icon {
+        fill: <?php echo $social_icon_color; ?>;
+      }
+      <?php
+    }
+
+ 
+    $css = ob_get_clean();
+    return $css;
+  }
+
+// Modify our styles registration like so:
+
+function theme_enqueue_styles() {
+  wp_enqueue_style( 'theme-styles', get_stylesheet_uri() ); // This is where you enqueue your theme's main stylesheet
+  $custom_css = theme_get_customizer_css();
+  wp_add_inline_style( 'theme-styles', $custom_css );
+}
+
+add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
+

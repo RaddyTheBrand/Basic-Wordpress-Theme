@@ -253,6 +253,10 @@ input[type="submit"]::placeholder {
   color: #D9D9D9;
 }
 
+.social-icon {
+  fill: #d9d9d9;
+}
+
 .wrapper {
   max-width: 600px;
   margin: 0 auto;
@@ -368,6 +372,15 @@ header a {
   -ms-flex-preferred-size: 0;
       flex-basis: 0;
   cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .social .networks a:hover, .social .networks span:hover {
@@ -423,6 +436,8 @@ header a {
 footer {
   margin: 20px 0;
   text-align: center;
+  margin-bottom: -15px;
+  padding-bottom: 20px;
 }
 
 #toggleMyMenu {

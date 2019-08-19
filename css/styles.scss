@@ -24,7 +24,6 @@ body {
     background-color:#FFFFFF;
 } 
 
-
 .row::after {
 content: "";
     clear: both;
@@ -195,6 +194,10 @@ input[type="submit"] {
     }
 }
 
+.social-icon {
+    fill: #d9d9d9;
+}
+
 .wrapper {
     max-width: 600px;
     margin: 0 auto;
@@ -297,6 +300,9 @@ header {
             text-align: center;
             flex-basis: 0;
             cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center; 
 
             &:hover {
                 opacity: 0.7;
@@ -358,6 +364,8 @@ header {
 footer {
     margin: 20px 0;
     text-align: center;
+    margin-bottom: -15px;
+    padding-bottom: 20px;
 } 
 
 
@@ -414,7 +422,6 @@ nav.pagination {
 
 
 .error404 {
-
     h1 {
         margin-top: 1em;
     }
@@ -422,14 +429,14 @@ nav.pagination {
         border: 1px solid $secondary-color;
     }
 }
- 
+
     article {
         a {
-        text-decoration: none;
-        &:hover {
-            color: $primary-color;
+            text-decoration: none;
+            &:hover {
+                color: $primary-color;
+            }
         }
-    }
 
     .thumbnail{
         a {
@@ -448,13 +455,11 @@ nav.pagination {
     .content {
         padding-bottom: $row-padding!important;
     }
-    
-
-
-
+     
     &:not(:last-child) {
         border-bottom: 1px solid $secondary-color;
     }
+    
 }
  
 
