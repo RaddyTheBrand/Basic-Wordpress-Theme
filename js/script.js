@@ -5,7 +5,11 @@ jQuery( document ).ready(function() {
     const closeBurger = jQuery('.close__burger');
     let isOpen = 0;
     let isOpenSearch = 0;
-   
+
+    // Menu Positioning depending on logo/header height
+    let currentHeight = jQuery('header').innerHeight();
+    console.log(currentHeight);  
+    jQuery(mobileNav).css({ top: currentHeight + 47 });
 
 
     jQuery(navToggle).click(function(){

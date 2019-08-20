@@ -194,6 +194,23 @@ input[type="submit"] {
     }
 }
 
+label {
+    display: block;
+}
+
+.comment-form-author, .comment-form-url, .comment-form-email, .comment-form-comment {
+
+    textarea {
+        min-height: 200px;
+        width: 100%;
+    }
+
+    input {
+        width: 100%;
+    }
+
+}
+
 .social-icon {
     fill: #d9d9d9;
 }
@@ -207,7 +224,8 @@ input[type="submit"] {
 }
 
 header {
-    padding: 40px 0; 
+    padding: 40px 0;
+    position: relative;
 
     a {
         text-decoration: none;
@@ -215,7 +233,26 @@ header {
         display: inline-block;
     }
 
+    .row {
+        display: flex;
+        flex: 1;
+        flex-direction: row;
+        -webkit-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+
+    .col-6 {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        flex: 1;
+        min-height: 80px;
+
+    }
+
 }
+  
+
  
 .mobile-menu {
     float: right;
@@ -372,13 +409,12 @@ footer {
 #toggleMyMenu {
     font-size: 1.6em;
     position: absolute;
-    top: 155px;
+
     background-color: rgb(250, 250, 250);
     left:0;
     right: 0;
     text-align: center;
     z-index: 1;
-    margin: 25px;
     border-bottom: 1px solid $secondary-color;
 
 
@@ -547,7 +583,7 @@ nav.pagination {
 
 
     .row-padding {
-        margin: 0 (-$row-padding);
+        // margin: 0 (-$row-padding);
         [class*="col-"] {
             padding: ($row-padding + $row-padding) $row-padding;
         }

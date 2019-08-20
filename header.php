@@ -14,33 +14,37 @@
         <div class="row">
             <div class="col-6 col-s-6">
             <?php 
-            if ( function_exists( 'the_custom_logo') !== '' ) {
+            if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
                 the_custom_logo();
             }
             else {
                 /*Link to homepage */ 
             ?>
-            <h1><a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a></h1>
+            <h1><a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>"><?php echo bloginfo('name'); ?></a></h1>
             <?php
             } 
             ?>
             </div>
-            <div class="col-6 col-s-6">
+            <div class="col-6 col-s-6 flex-test">
                 <div class="mobile-menu">
                     <span class="open__burger"><img src="<?php echo get_template_directory_uri(); ?>/images/menu.svg" alt="Menu"/>Menu</span>
                     <span class="close__burger"><img src="<?php echo get_template_directory_uri(); ?>/images/menu_close.svg" alt="Close"/>Close</span>
                 </div>
             </div>
             </div> 
+
+            <nav id="toggleMyMenu" style="display: none;">
+                <?php
+                wp_nav_menu( array ('theme_location' =>
+                'my-custom-menu', 'container_class' =>
+                'custom-menu-class'));
+                ?>
+            </nav>
+
+
         </header>
     
-    <nav id="toggleMyMenu" style="display: none;">
-        <?php
-            wp_nav_menu( array ('theme_location' =>
-            'my-custom-menu', 'container_class' =>
-            'custom-menu-class'));
-        ?>
-    </nav>
+
   
     <div class="row slogan">
         <div class="col-12">
