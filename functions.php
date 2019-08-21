@@ -65,3 +65,17 @@ add_action( 'after_setup_theme', 'themename_custom_logo_setup' );
 
 require_once( get_template_directory() . '/functions/theme-options.php' );
 
+
+
+require 'plugin-update-checker/plugin-update-checker.php';
+$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+	'https://github.com/RaddyTheBrand/Basic-Wordpress-Theme',
+	__FILE__,
+	'Basic-Wordpress-Theme'
+);
+
+//Optional: If you're using a private repository, specify the access token like this:
+$myUpdateChecker->setAuthentication('56dabb71402713f31efdec2afc2ed72ab6fde599');
+
+//Optional: Set the branch that contains the stable release.
+$myUpdateChecker->setBranch('master');

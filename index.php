@@ -42,7 +42,6 @@
                 . '/images/thumbnail-default.jpg" alt="Missing Image"/>';
                 }
             ?>
-
             </a>
         </div> 
         <div class="col-6 content">

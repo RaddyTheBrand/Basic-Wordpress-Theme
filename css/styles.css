@@ -546,6 +546,7 @@ article a:hover {
 }
 
 article .thumbnail {
+  position: relative;
   padding-top: 22px !important;
 }
 
