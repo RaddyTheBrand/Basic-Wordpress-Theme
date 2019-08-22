@@ -198,6 +198,7 @@ label {
     display: block;
 }
 
+/* Comments */
 .comment-form-author, .comment-form-url, .comment-form-email, .comment-form-comment {
 
     textarea {
@@ -210,6 +211,13 @@ label {
     }
 
 }
+
+.nocomments {
+    padding: 30px;
+    text-align: center;
+}
+
+
 
 .social-icon {
     fill: #d9d9d9;
@@ -240,16 +248,23 @@ header {
         -webkit-flex-wrap: wrap;
         flex-wrap: wrap;
     }
-
-    .col-6 {
+ 
+    .menu-flex {
         display: flex;
         justify-content: flex-end;
         align-items: center;
         flex: 1;
         min-height: 80px;
-
     }
 
+    .logo-flex {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex: 1;
+        min-height: 80px;
+    }
+ 
 }
   
 
@@ -285,6 +300,7 @@ header {
         padding-top: ($row-padding + $row-padding);
     
         img {
+            width: 100%; 
             display: block;
         }
     }
@@ -363,6 +379,7 @@ header {
         right: 0;
         top: 158px;
         padding: 10px;
+        z-index: 1;
 
         .screen-reader-text {
             display: none;
@@ -429,6 +446,14 @@ footer {
                 padding:10px;
                 text-decoration: none;
             }
+
+            .sub-menu {
+                margin-right: 20px;
+                margin-left: 20px;
+                li {
+                    border-top: 1px solid $secondary-color;
+                }
+            }
  
         }
     }
@@ -487,16 +512,16 @@ article {
             height: 242px;
             display: block;
         }  
-        // span.date {
-        //     transform: rotateZ(-90deg);
-        //     position: absolute;
-        //     top: 70px;
-        //     left: -68px; 
-        // }
+        span.date {
+            position: absolute;
+            bottom: 22px;
+            left: 10px;
+            font-size: 0.8em;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 2px 4px;
+        }
          
     }
-
-    
 
     .content {
         padding-bottom: $row-padding!important;
@@ -565,6 +590,13 @@ article {
         height: 300px;
         object-fit: cover;
     }
+}
+
+
+/* PLUGINS */
+/* Contact Form 7 */
+.single-page .wpcf7-form .wpcf7-form-control-wrap {
+    margin-left: 0;
 }
 
 

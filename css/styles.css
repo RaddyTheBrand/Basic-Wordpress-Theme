@@ -257,6 +257,7 @@ label {
   display: block;
 }
 
+/* Comments */
 .comment-form-author textarea, .comment-form-url textarea, .comment-form-email textarea, .comment-form-comment textarea {
   min-height: 200px;
   width: 100%;
@@ -264,6 +265,11 @@ label {
 
 .comment-form-author input, .comment-form-url input, .comment-form-email input, .comment-form-comment input {
   width: 100%;
+}
+
+.nocomments {
+  padding: 30px;
+  text-align: center;
 }
 
 .social-icon {
@@ -305,13 +311,29 @@ header .row {
       flex-wrap: wrap;
 }
 
-header .col-6 {
+header .menu-flex {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  min-height: 80px;
+}
+
+header .logo-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -354,6 +376,7 @@ header .col-6 {
 }
 
 .author .author-image img {
+  width: 100%;
   display: block;
 }
 
@@ -448,6 +471,7 @@ header .col-6 {
   right: 0;
   top: 158px;
   padding: 10px;
+  z-index: 1;
 }
 
 .social #search__popup .screen-reader-text {
@@ -510,6 +534,15 @@ footer {
   text-decoration: none;
 }
 
+#toggleMyMenu ul li .sub-menu {
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+#toggleMyMenu ul li .sub-menu li {
+  border-top: 1px solid #D9D9D9;
+}
+
 nav.pagination {
   display: -ms-grid;
   display: grid;
@@ -561,6 +594,15 @@ article .thumbnail img {
   width: 100%;
   height: 242px;
   display: block;
+}
+
+article .thumbnail span.date {
+  position: absolute;
+  bottom: 22px;
+  left: 10px;
+  font-size: 0.8em;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 2px 4px;
 }
 
 article .content {
@@ -623,6 +665,12 @@ article:not(:last-child) {
   height: 300px;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+/* PLUGINS */
+/* Contact Form 7 */
+.single-page .wpcf7-form .wpcf7-form-control-wrap {
+  margin-left: 0;
 }
 
 @media screen and (min-width: 736px) {

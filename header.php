@@ -12,7 +12,7 @@
 
     <header>
         <div class="row">
-            <div class="col-6 col-s-6">
+            <div class="col-6 col-s-6 logo-flex">
             <?php 
             if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
                 the_custom_logo();
@@ -23,9 +23,9 @@
             <h1><a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>"><?php echo bloginfo('name'); ?></a></h1>
             <?php
             } 
-            ?>
+            ?> 
             </div>
-            <div class="col-6 col-s-6 flex-test">
+            <div class="col-6 col-s-6 menu-flex">
                 <div class="mobile-menu">
                     <span class="open__burger"><img src="<?php echo get_template_directory_uri(); ?>/images/menu.svg" alt="Menu"/>Menu</span>
                     <span class="close__burger"><img src="<?php echo get_template_directory_uri(); ?>/images/menu_close.svg" alt="Close"/>Close</span>

@@ -9,6 +9,7 @@ function basic_author_callout($wp_customize) {
     $wp_customize->add_section('basic-author-callout-section', array(
         'title' => 'Author',
         'priority' => 2,
+        'description' => __('The Author section is only displayed on the Blog page.'),
     ));
 
     $wp_customize->add_setting('basic-author-callout-display', array(
@@ -25,7 +26,7 @@ function basic_author_callout($wp_customize) {
 
 
     $wp_customize->add_setting('basic-author-callout-text', array(
-        'default' => 'Example Slogan Text!'
+        'default' => ''
     ));
 
     $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'basic-author-callout-control', array(
@@ -278,7 +279,7 @@ function basic_footer_callout($wp_customize) {
     )));
 
     $wp_customize->add_setting('basic-footer-callout-copyright', array(
-        'default' => '&copy; 2019'
+        'default' => ''
     ));
 
     $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'basic-footer-callout-control', array(
