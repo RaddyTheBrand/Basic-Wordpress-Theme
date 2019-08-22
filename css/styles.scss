@@ -514,11 +514,11 @@ article {
         }  
         span.date {
             position: absolute;
-            bottom: 22px;
-            left: 10px;
             font-size: 0.8em;
             background-color: rgba(255, 255, 255, 0.8);
             padding: 2px 4px;
+            bottom: 0px;
+            left: 0px;
         }
          
     }
@@ -651,5 +651,13 @@ article {
         } 
     }
 
-
+    article {
+        .thumbnail {
+            span.date {
+                bottom: 22px;
+                left: 10px;
+            }
+        }
+    }
+ 
 }
