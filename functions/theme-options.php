@@ -47,8 +47,8 @@ function basic_author_callout($wp_customize) {
         'label' => 'Image',
         'section' => 'basic-author-callout-section',
         'settings' => 'basic-author-callout-image',
-        'width' => 264,
-        'height' => 176
+        'width' => 442,
+        'height' => 310
     )));
 
 }

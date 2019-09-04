@@ -84,7 +84,7 @@ body {
   width: 100%;
 }
 
-img {
+img, .wp-caption {
   max-width: 100%;
   height: auto;
 }
