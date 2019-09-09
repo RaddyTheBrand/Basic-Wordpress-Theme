@@ -212,6 +212,10 @@ label {
 
 }
 
+.comment-respond {
+    clear: both;
+}
+
 .nocomments {
     padding: 30px;
     text-align: center;
@@ -292,6 +296,10 @@ header {
     padding: 10px;
     border-top: 1px solid $secondary-color;
     border-bottom: 1px solid $secondary-color;
+
+    p {
+        margin-bottom: 0;
+    }
 }
 
 .author {
@@ -389,6 +397,7 @@ header {
             border-radius: $image-radius;
         }
     }
+
 }
 
 
@@ -599,6 +608,10 @@ article {
     margin-left: 0;
 }
 
+/* WOOCOMMERCE */
+.woocommerce {
+    margin-bottom: 40px;
+}
 
 @media screen and (min-width: 736px) {
     

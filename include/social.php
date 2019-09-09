@@ -92,6 +92,7 @@
 
     if ($socialDisplayed > 5) {
         $colSize = "col-12";
+        $searchBoxTopPosition = "top: 159px;";
     }
     else {
         $colSize = "col-6";
@@ -136,7 +137,7 @@
         </span>
     </div>
         <div id="search_underlayer"></div>
-        <div id="search__popup" style="display: none;"> 
+        <div id="search__popup" style="display: none; <?php echo $searchBoxTopPosition; ?>"> 
                 <form action="/" method="get" class="row">
                         <input  class="col-8" type="text" name="s" placeholder="Search..." id="search" value="<?php the_search_query(); ?>" />
                         <input class="col-4" type="submit" />

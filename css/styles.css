@@ -267,6 +267,10 @@ label {
   width: 100%;
 }
 
+.comment-respond {
+  clear: both;
+}
+
 .nocomments {
   padding: 30px;
   text-align: center;
@@ -365,6 +369,10 @@ header .logo-flex {
   padding: 10px;
   border-top: 1px solid #D9D9D9;
   border-bottom: 1px solid #D9D9D9;
+}
+
+.slogan p {
+  margin-bottom: 0;
 }
 
 .author {
@@ -671,6 +679,11 @@ article:not(:last-child) {
 /* Contact Form 7 */
 .single-page .wpcf7-form .wpcf7-form-control-wrap {
   margin-left: 0;
+}
+
+/* WOOCOMMERCE */
+.woocommerce {
+  margin-bottom: 40px;
 }
 
 @media screen and (min-width: 736px) {
