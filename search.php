@@ -31,7 +31,7 @@ get_header();
                     the_post_thumbnail('medium', ['class' => 'objFit'], array('title' => get_the_title() ));
                 }
                 else {
-                echo '<img src="' . get_bloginfo( 'stylesheet_directory' ) 
+                echo '<img src="' . get_stylesheet_directory_uri( 'stylesheet_directory' ) 
                 . '/images/thumbnail-default.jpg" alt="Missing Image"/>';
                 }
             ?>

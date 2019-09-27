@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <?php wp_head(); ?>
 </head>
-<body>
+<body <?php body_class(); ?>>
  
 <div class="wrapper">
 
@@ -20,7 +20,7 @@
             else {
                 /*Link to homepage */ 
             ?>
-            <h1><a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>"><?php echo bloginfo('name'); ?></a></h1>
+            <h1><a href="<?php  esc_url( home_url() ); ?>" title="<?php bloginfo('name'); ?>"><?php echo bloginfo('name'); ?></a></h1>
             <?php
             } 
             ?> 

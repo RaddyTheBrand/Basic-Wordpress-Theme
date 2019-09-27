@@ -61,6 +61,6 @@ $defaults = array(
 add_theme_support( 'custom-logo', $defaults );
 }
 add_action( 'after_setup_theme', 'themename_custom_logo_setup' );
+ 
 
-
-require_once( get_template_directory() . '/functions/theme-options.php' );
+get_template_part( '/functions/theme-options.php', 'page' );

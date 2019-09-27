@@ -21,10 +21,9 @@
 </div> 
 <?php } ?>
  
-
 <main class="container"> 
 <?php
-    require_once( get_template_directory() . '/include/social.php' );
+    get_template_part( '/include/social', 'social' );
 
     if(have_posts()) {
         while(have_posts()) : the_post();
@@ -38,7 +37,7 @@
                     the_post_thumbnail('medium', ['class' => 'objFit'], array('title' => get_the_title() ));
                 }
                 else {
-                echo '<img src="' . get_bloginfo( 'stylesheet_directory' ) 
+                echo '<img src="' . get_stylesheet_directory_uri( 'stylesheet_directory' ) 
                 . '/images/thumbnail-default.jpg" alt="Missing Image"/>';
                 }
             ?>

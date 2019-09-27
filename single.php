@@ -12,10 +12,29 @@
     <?php } ?>
     <h1 class="heading"><?php the_title(); ?></h1>
     <?php the_content();?>
+
+    <?php
+ 	$defaults = array(
+		'before'           => '<p>' . __( 'Pages:', 'twentyfourteen' ),
+		'after'            => '</p>',
+		'link_before'      => '',
+		'link_after'       => '',
+		'next_or_number'   => 'number',
+		'separator'        => ' ',
+		'nextpagelink'     => __( 'Next page', 'twentyfourteen'),
+		'previouspagelink' => __( 'Previous page', 'twentyfourteen' ),
+		'pagelink'         => '%',
+		'echo'             => 1
+	);
+ 
+        wp_link_pages( $defaults );
+
+    ?>
+
     <?php comments_template(); ?> 
     <?php 
         endwhile; }
-        require_once( get_template_directory() . '/include/social.php' );
+        get_template_part( '/include/social.php', 'social' );
     ?>
 </main>
 <?php get_footer(); ?>

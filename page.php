@@ -14,7 +14,7 @@
     <?php the_content();?>
     <?php 
         endwhile; } 
-        require_once( get_template_directory() . '/include/social.php' );
+        get_template_part( '/include/social.php', 'social' );
     ?>
 </main>
 <?php get_footer(); ?>

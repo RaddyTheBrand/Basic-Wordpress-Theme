@@ -10,7 +10,7 @@
     <?php comments_template(); ?> 
     <?php 
         endwhile; }
-        require_once( get_template_directory() . '/include/social.php' );
+        get_template_part('/include/social.php', 'page' );
     ?>
 </main>
 <?php get_footer(); ?>
