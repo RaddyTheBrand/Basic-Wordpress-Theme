@@ -7,7 +7,11 @@
 <main class="row single-page">
     <h1 class="heading"><?php the_title(); ?></h1>
     <?php the_content();?>
-    <?php comments_template(); ?> 
+    <ol class="commentlist">
+        <?php wp_list_comments(); paginate_comments_links(); ?>
+
+    </ol>
+    <?php comment_form(); ?>
     <?php 
         endwhile; }
         get_template_part('/include/social.php', 'page' );

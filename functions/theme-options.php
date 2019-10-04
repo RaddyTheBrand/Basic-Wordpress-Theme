@@ -9,7 +9,7 @@ function basic_author_callout($wp_customize) {
     $wp_customize->add_section('basic-author-callout-section', array(
         'title' => 'Author',
         'priority' => 2,
-        'description' => __('The Author section is only displayed on the Blog page.'),
+        'description' => __('The Author section is only displayed on the Blog page.', 'theminimalist'),
     ));
 
     $wp_customize->add_setting('basic-author-callout-display', array(
@@ -60,7 +60,7 @@ function basic_social_callout($wp_customize) {
     $wp_customize->add_section('basic-social-callout-section', array(
         'title' => 'Social',
         'priority' => 3,
-        'description' => __('Leave blank if you dont want a social network to be displayed.'),
+        'description' => __('Leave blank if you dont want a social network to be displayed.', 'theminimalist'),
     ));
 
     $wp_customize->add_setting('basic-social-callout-display', array(
@@ -90,7 +90,7 @@ function basic_social_callout($wp_customize) {
         How to get your MailChimp Form ID: Login to Mailchimp. Naviage to Audience and then click on "Add a pop-up form". Create a "Embedded form" and untick everything except Show only required fields.
         At this point the link that you need to copy will appear in the Copy/paste section. Find the html tag that starts with <form action= and then copy the link in the quotes.
         Paste the link in the input below.
-        '),
+        ', 'theminimalist'),
     )));
 
 
@@ -304,7 +304,7 @@ function theme_customize_register( $wp_customize ) {
 
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'text_color', array(
       'section' => 'colors',
-      'label'   => esc_html__( 'Text color', 'theme' ),
+      'label'   => esc_html__( 'Text color', 'theminimalist' ),
     ) ) );
 
     // Link color
@@ -316,7 +316,7 @@ function theme_customize_register( $wp_customize ) {
 
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'link_color', array(
       'section' => 'colors',
-      'label'   => esc_html__( 'Link color', 'theme' ),
+      'label'   => esc_html__( 'Link color', 'theminimalist' ),
     ) ) );
 
     // Accent color
@@ -328,7 +328,7 @@ function theme_customize_register( $wp_customize ) {
 
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'accent_color', array(
       'section' => 'colors',
-      'label'   => esc_html__( 'Accent color', 'theme' ),
+      'label'   => esc_html__( 'Accent color', 'theminimalist' ),
     ) ) );
 
     // Background color
@@ -340,7 +340,7 @@ function theme_customize_register( $wp_customize ) {
   
       $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'custom_background_color', array(
         'section' => 'colors',
-        'label'   => esc_html__( 'Background color', 'theme' ),
+        'label'   => esc_html__( 'Background color', 'theminimalist' ),
       ) ) );
 
     // Wrapper color
@@ -352,7 +352,7 @@ function theme_customize_register( $wp_customize ) {
   
       $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'wrapper_background_color', array(
         'section' => 'colors',
-        'label'   => esc_html__( 'Wrapper color', 'theme' ),
+        'label'   => esc_html__( 'Wrapper color', 'theminimalist' ),
       ) ) );
 
     // Social Icon color
@@ -364,7 +364,7 @@ function theme_customize_register( $wp_customize ) {
   
       $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'social_icon_color', array(
         'section' => 'colors',
-        'label'   => esc_html__( 'Social Icons color', 'theme' ),
+        'label'   => esc_html__( 'Social Icons color', 'theminimalist' ),
       ) ) );
   }
 

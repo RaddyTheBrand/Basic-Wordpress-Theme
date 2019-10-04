@@ -29,7 +29,8 @@
         while(have_posts()) : the_post();
 ?>
 
-<article class="row row-padding">
+
+<article class="row row-padding"  id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
         <div class="col-6 thumbnail">
             <a href="<?php the_permalink();?>">
             <?php  

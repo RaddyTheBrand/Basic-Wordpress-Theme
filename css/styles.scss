@@ -116,12 +116,12 @@ a {
 ul { 
     list-style-type: disc; 
     list-style-position: inside; 
- }
+}
 
 ol { 
     list-style-type: decimal; 
     list-style-position: inside; 
- }
+}
 
 ul ul, ol ul { 
     list-style-type: circle; 
@@ -273,6 +273,22 @@ label {
     display: block
 }
 
+.post-tags {
+    padding: 13px;
+    border-top: 1px solid $secondary-color;
+    border-bottom: 1px solid $secondary-color;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.size-auto, 
+.size-full,
+.size-large,
+.size-medium,
+.size-thumbnail {
+	max-width: 100%;
+	height: auto;
+}
 
 /* Comments */
 .comment-form-author, .comment-form-url, .comment-form-email, .comment-form-comment {

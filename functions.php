@@ -21,12 +21,14 @@ add_action ('after_setup_theme', 'basic_wp_setup');
 
 // Creating Custom Menu
 function wpb_custom_new_menu() {
-    register_nav_menu('my-custom-menu',__('My Custom Menu'));
+    register_nav_menu('my-custom-menu',__('TheMinimalist Custom Menu', 'theminimalist'));
 }
 add_action('init', 'wpb_custom_new_menu');
 
 // Post Thumbnails
 add_theme_support('post-thumbnails');
+add_theme_support('automatic-feed-links');
+
 
 // Filter except length to 25 words.
 // function custom_excerpt_length( $length ) {
@@ -64,3 +66,12 @@ add_action( 'after_setup_theme', 'themename_custom_logo_setup' );
  
 
 get_template_part( '/functions/theme-options.php', 'page' );
+
+
+if ( ! isset( $content_width ) ) {
+	$content_width = 600;
+}
+
+add_theme_support( 'post-thumbnails', array( 'post' ) );          // Posts only
+
+

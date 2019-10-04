@@ -51,7 +51,7 @@ get_header();
     <?php wp_reset_postdata(); ?>
 
 	<?php else : ?>
-		<h1><?php _e( 'Sorry, no posts matched your criteria.' ); ?></h1>
+		<h1><?php _e( 'Sorry, no posts matched your criteria.', 'theminimalist'); ?></h1>
 	<?php endif; ?>
 	</main>
 

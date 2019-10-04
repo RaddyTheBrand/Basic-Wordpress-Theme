@@ -332,6 +332,23 @@ label {
   display: block;
 }
 
+.post-tags {
+  padding: 13px;
+  border-top: 1px solid #D9D9D9;
+  border-bottom: 1px solid #D9D9D9;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.size-auto,
+.size-full,
+.size-large,
+.size-medium,
+.size-thumbnail {
+  max-width: 100%;
+  height: auto;
+}
+
 /* Comments */
 .comment-form-author textarea, .comment-form-url textarea, .comment-form-email textarea, .comment-form-comment textarea {
   min-height: 200px;
