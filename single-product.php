@@ -14,7 +14,7 @@
     <?php comment_form(); ?>
     <?php 
         endwhile; }
-        get_template_part('/include/social.php', 'page' );
+        get_template_part('/inc/social.php', 'page' );
     ?>
 </main>
 <?php get_footer(); ?>

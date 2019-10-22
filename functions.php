@@ -30,26 +30,6 @@ add_theme_support('post-thumbnails');
 add_theme_support('automatic-feed-links');
 
 
-// Filter except length to 25 words.
-// function custom_excerpt_length( $length ) {
-//     return 25;
-// }
-// add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
-// Limit except length to 125 characters.
-// tn limited excerpt length by number of characters
-function get_excerpt( $count ) {
-    $permalink = get_permalink($post->ID);
-    $excerpt = get_the_content();
-    $excerpt = strip_tags($excerpt);
-    $excerpt = substr($excerpt, 0, $count);
-    $excerpt = substr($excerpt, 0, strripos($excerpt, " "));
-    $excerpt = ''.$excerpt.'... ';
-    return $excerpt;
-}
-
-
-
-
 // Support for custom Logo
 add_theme_support( 'custom-logo' );
 function themename_custom_logo_setup() {
@@ -64,13 +44,14 @@ add_theme_support( 'custom-logo', $defaults );
 }
 add_action( 'after_setup_theme', 'themename_custom_logo_setup' );
  
-
-get_template_part( '/functions/theme-options.php', 'page' );
-
+// Customizer Settings
+require get_stylesheet_directory() . '/inc/theminimalist-customizer.php';
+new TheMinimalist_Customizer();
+ 
 
 if ( ! isset( $content_width ) ) {
 	$content_width = 600;
-}
+} 
 
 add_theme_support( 'post-thumbnails', array( 'post' ) );          // Posts only
 

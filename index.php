@@ -23,7 +23,7 @@
  
 <main class="container"> 
 <?php
-    get_template_part( '/include/social', 'social' );
+    get_template_part( '/inc/social', 'social' );
 
     if(have_posts()) {
         while(have_posts()) : the_post();
@@ -47,7 +47,18 @@
         </div> 
         <div class="col-6 content">
                 <h2><a href="<?php the_permalink();?>"><?php the_title(); ?></a></h2>
-                <p><?php echo get_excerpt(186); ?></p>
+                <p>
+                <?php
+                    // Making an excerpt of the blog post content
+                    $excerpt = strip_tags($post->post_content);
+                    if (strlen($excerpt) > 100) {
+                    $excerpt = substr($excerpt, 0, 100);
+                    $excerpt = substr($excerpt, 0, strrpos($excerpt, ' '));
+                    $excerpt .= '...';
+                    }
+                    echo $excerpt;
+                ?>
+                </p>
                 <a class="button" href="<?php the_permalink();?>">More +</a>
         </div>
 </article>
