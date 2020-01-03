@@ -121,11 +121,8 @@ function theme_get_customizer_css() {
       <?php
     }
   
-  
     $css = ob_get_clean();
     return $css;
-
-    
 }
 
 
