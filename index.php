@@ -6,16 +6,12 @@
     </div>
     <div class="col-6 author-content">
         <?php 
-
             $authorText = get_theme_mod('basic-author-callout-text');
-
             if ($authorText != '') {
                 echo wpautop($authorText);
-            }
-            else {
+            } else {
                 echo "Edit this by going to your Dashboard -> Appearance -> Customise -> Author Editor";
             }
-            
         ?>
     </div>
 </div> 
@@ -24,11 +20,9 @@
 <main class="container"> 
 <?php
     get_template_part( '/inc/social', 'social' );
-
     if(have_posts()) {
         while(have_posts()) : the_post();
 ?>
-
 
 <article class="row row-padding"  id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
         <div class="col-6 thumbnail">
@@ -36,8 +30,7 @@
             <?php  
                 if ( has_post_thumbnail() ) {
                     the_post_thumbnail('medium', ['class' => 'objFit'], array('title' => get_the_title() ));
-                }
-                else {
+                } else {
                 echo '<img src="' . get_stylesheet_directory_uri( 'stylesheet_directory' ) 
                 . '/images/thumbnail-default.jpg" alt="Missing Image"/>';
                 }
@@ -52,9 +45,9 @@
                     // Making an excerpt of the blog post content
                     $excerpt = strip_tags($post->post_content);
                     if (strlen($excerpt) > 100) {
-                    $excerpt = substr($excerpt, 0, 100);
-                    $excerpt = substr($excerpt, 0, strrpos($excerpt, ' '));
-                    $excerpt .= '...';
+                        $excerpt = substr($excerpt, 0, 100);
+                        $excerpt = substr($excerpt, 0, strrpos($excerpt, ' '));
+                        $excerpt .= '...';
                     }
                     echo $excerpt;
                 ?>
@@ -71,8 +64,7 @@ if ( function_exists( 'paginate_links') !== '' ) {
     ?>
     <nav class="pagination"><?php echo paginate_links(); ?> </nav> 
     <?php
-}
-else {
+} else {
     /*Link to homepage */ 
 }
 ?>

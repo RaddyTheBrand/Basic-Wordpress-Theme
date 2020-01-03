@@ -25,24 +25,24 @@
     ?>
 
     <?php
- 	$defaults = array(
-		'before'           => '<p>' . __( 'Pages:', 'theminimalist' ),
-		'after'            => '</p>',
-		'link_before'      => '',
-		'link_after'       => '',
-		'next_or_number'   => 'number',
-		'separator'        => ' ',
-		'nextpagelink'     => __( 'Next page', 'theminimalist'),
-		'previouspagelink' => __( 'Previous page', 'theminimalist' ),
-		'pagelink'         => '%',
-		'echo'             => 1
-	);
- 
+        $defaults = array(
+            'before'           => '<p>' . __( 'Pages:', 'theminimalist' ),
+            'after'            => '</p>',
+            'link_before'      => '',
+            'link_after'       => '',
+            'next_or_number'   => 'number',
+            'separator'        => ' ',
+            'nextpagelink'     => __( 'Next page', 'theminimalist'),
+            'previouspagelink' => __( 'Previous page', 'theminimalist' ),
+            'pagelink'         => '%',
+            'echo'             => 1
+        );
         wp_link_pages( $defaults );
-
     ?>
 
-    <?php comments_template(); ?> 
+    <!-- ADD COMMENTS HERE -->
+    <?php if ( is_singular() ) wp_enqueue_script( "comment-reply" ); ?>
+
     <?php 
         endwhile; }
         get_template_part( '/inc/social.php', 'social' );

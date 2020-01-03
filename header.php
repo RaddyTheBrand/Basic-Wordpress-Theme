@@ -16,8 +16,7 @@
             <?php 
             if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
                 the_custom_logo();
-            }
-            else {
+            } else {
                 /*Link to homepage */ 
             ?>
             <h1><a href="<?php  esc_url( home_url() ); ?>" title="<?php bloginfo('name'); ?>"><?php echo bloginfo('name'); ?></a></h1>
@@ -40,23 +39,19 @@
                 'custom-menu-class'));
                 ?>
             </nav>
-
-
+        
         </header>
     
-
-  
     <div class="row slogan">
         <div class="col-12">
         <p>
         <?php $slogan = get_bloginfo('description'); ?>
         <?php 
-        if ( $slogan!='' ) { 
-            bloginfo('description'); 
-        } 
-        else {
-            echo "Edit this by going to your Dashboard -> Appearance -> Custinuse -> Site Identity";
-        }
+            if ( $slogan!='' ) { 
+                bloginfo('description'); 
+            } else {
+                echo "Edit this by going to your Dashboard -> Appearance -> Custinuse -> Site Identity";
+            }
         ?>
         </p>
         </div>

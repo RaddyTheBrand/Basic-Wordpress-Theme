@@ -56,3 +56,83 @@ if ( ! isset( $content_width ) ) {
 add_theme_support( 'post-thumbnails', array( 'post' ) );          // Posts only
 
 
+
+function theme_get_customizer_css() {
+    ob_start();
+  
+    $text_color = get_theme_mod( 'text_color', '' );
+    if ( ! empty( $text_color ) ) {
+      ?>
+      body {
+        color: <?php echo $text_color; ?>;
+      }
+      <?php
+    }
+  
+    $link_color = get_theme_mod( 'link_color', '' );
+    if ( ! empty( $link_color ) ) {
+      ?>
+      a {
+        color: <?php echo $link_color; ?>;
+        border-bottom-color: <?php echo $link_color; ?>;
+      }
+      <?php
+    }
+  
+    $accent_color = get_theme_mod( 'accent_color', '' );
+    if ( ! empty( $accent_color ) ) {
+      ?>
+      a:hover {
+        color: <?php echo $accent_color; ?>;
+        border-bottom-color: <?php echo $accent_color; ?>;
+      }
+  
+      button,
+      input[type="submit"] {
+        background-color: <?php echo $accent_color; ?>;
+      }
+      <?php
+    }
+  
+    $custom_background_color = get_theme_mod( 'custom_background_color', '' );
+    if ( ! empty( $custom_background_color ) ) {
+      ?>
+      body {
+        background-color: <?php echo $custom_background_color; ?>;
+      }
+      <?php
+    }
+  
+    $wrapper_background_color = get_theme_mod( 'wrapper_background_color', '' );
+    if ( ! empty( $wrapper_background_color ) ) {
+      ?>
+      .wrapper {
+        background-color: <?php echo $wrapper_background_color; ?>;
+      }
+      <?php
+    }
+  
+    $social_icon_color = get_theme_mod( 'social_icon_color', '' );
+    if ( ! empty( $social_icon_color ) ) {
+      ?>
+      .social-icon {
+        fill: <?php echo $social_icon_color; ?>;
+      }
+      <?php
+    }
+  
+  
+    $css = ob_get_clean();
+    return $css;
+
+    
+}
+
+
+function theme_enqueue_styles() {
+    wp_enqueue_style( 'theme-styles', get_stylesheet_uri() ); // This is where you enqueue your theme's main stylesheet
+    $custom_css = theme_get_customizer_css();
+    wp_add_inline_style( 'theme-styles', $custom_css );
+}
+    
+add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
