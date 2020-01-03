@@ -13,16 +13,12 @@
     <header>
         <div class="row">
             <div class="col-6 col-s-6 logo-flex">
-            <?php 
-            if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
-                the_custom_logo();
-            } else {
-                /*Link to homepage */ 
-            ?>
-            <h1><a href="<?php  esc_url( home_url() ); ?>" title="<?php bloginfo('name'); ?>"><?php echo bloginfo('name'); ?></a></h1>
-            <?php
-            } 
-            ?> 
+                <?php 
+                if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
+                    the_custom_logo();
+                } else { /*Link to homepage */  ?>
+                <h1><a href="<?php  esc_url( home_url() ); ?>" title="<?php bloginfo('name'); ?>"><?php echo bloginfo('name'); ?></a></h1>
+                <?php } ?> 
             </div>
             <div class="col-6 col-s-6 menu-flex">
                 <div class="mobile-menu">
@@ -30,17 +26,15 @@
                     <span class="close__burger"><img src="<?php echo get_template_directory_uri(); ?>/images/menu_close.svg" alt="Close"/>Close</span>
                 </div>
             </div>
-            </div> 
-
-            <nav id="toggleMyMenu" style="display: none;">
-                <?php
-                wp_nav_menu( array ('theme_location' =>
-                'my-custom-menu', 'container_class' =>
-                'custom-menu-class'));
-                ?>
-            </nav>
-        
-        </header>
+        </div> 
+        <nav id="toggleMyMenu" style="display: none;">
+            <?php
+            wp_nav_menu( array ('theme_location' =>
+            'my-custom-menu', 'container_class' =>
+            'custom-menu-class'));
+            ?>
+        </nav>
+    </header>
     
     <div class="row slogan">
         <div class="col-12">

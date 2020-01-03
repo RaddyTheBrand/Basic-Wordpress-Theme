@@ -14,16 +14,10 @@
     <?php the_content();?>
 
     <?php 
-    
     if(has_tag()) {
        ?><div class="post-tags"><?php the_tags(); ?> </div>
        <?php
-    } else {
-        //Article untagged
-    }
-    
-    ?>
-
+    } else { /* Article untagged */ } ?>
     <?php
         $defaults = array(
             'before'           => '<p>' . __( 'Pages:', 'theminimalist' ),
@@ -40,12 +34,13 @@
         wp_link_pages( $defaults );
     ?>
 
-    <!-- ADD COMMENTS HERE -->
-    <?php if ( is_singular() ) wp_enqueue_script( "comment-reply" ); ?>
-
     <?php 
         endwhile; }
         get_template_part( '/inc/social.php', 'social' );
     ?>
+
+    <?php comments_template(); ?>
+
+    
 </main>
 <?php get_footer(); ?>
