@@ -212,6 +212,33 @@ label {
     }
 }
 
+code, pre {
+    background-color: #f7f7f9;
+}
+
+pre {
+    display: block;
+    padding: 0.786em 1.071em;
+    margin: 0 0 1.313em;
+    font-size: 1.15em;
+    line-height: 1.7;
+    word-break: break-all;
+    word-wrap: break-word;
+    white-space: pre;
+    white-space: pre-wrap;
+    border-radius: 4px;
+}
+
+.wp-block-code {
+    font-family: Menlo,Consolas,monaco,monospace;
+    font-size: 14px;
+    color: 
+    #23282d;
+    padding: .8em 1em;
+    border: 1px solid
+    #e2e4e7;
+    border-radius: 4px;
+}
 
 
 /* WP Required CSS */
@@ -719,6 +746,7 @@ article {
     white-space: initial;
     margin-top: -20px;
 }
+
 
 
 /* WOOCOMMERCE */

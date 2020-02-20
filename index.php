@@ -29,7 +29,7 @@
         <a href="<?php the_permalink();?>">
         <?php  
             if ( has_post_thumbnail() ) {
-                the_post_thumbnail('medium', ['class' => 'objFit'], array('title' => get_the_title() ));
+                the_post_thumbnail('medium_large', ['class' => 'objFit'], array('title' => get_the_title() ));
             } else {
             echo '<img src="' . get_stylesheet_directory_uri( 'stylesheet_directory' ) 
             . '/images/thumbnail-default.jpg" alt="Missing Image"/>';
