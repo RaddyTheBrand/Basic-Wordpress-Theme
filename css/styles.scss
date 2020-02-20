@@ -1,10 +1,12 @@
 // @import url('https://fonts.googleapis.com/css?family=Source+Serif+Pro');
-@import url('https://fonts.googleapis.com/css?family=Raleway:300,500&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
 
 $image-radius: 0;
-$primary-color:#000;
+$primary-color: #272730;;
 $primary-color-hover: #333333;
-$secondary-color: #D9D9D9;
+$secondary-color: #808080;
 $row-padding: 11px;
 
 * {
@@ -14,13 +16,12 @@ $row-padding: 11px;
 }
 
 body { 
-    font-family: 'Raleway', sans-serif;
+    font-family: "Open Sans",sans-serif;
     color: $primary-color; 
     line-height: 1.6;
     font-weight: 300;
     text-size-adjust: auto;
     letter-spacing: 1px;
-    font-size: 1em;
     background-color:#FFFFFF;
 } 
 
@@ -66,7 +67,9 @@ video {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-weight: 500;
+    font-family: "Work Sans",sans-serif;
+    font-style: normal;
+    font-weight: 700;
     margin-bottom: 0.6em;
     line-height: 1.2em;
 }
@@ -92,6 +95,7 @@ h5, h6 {
 }
 
 p {
+    color: $secondary-color;
     margin-bottom: 0.8em;
     text-rendering: optimizeLegibility;
 }
@@ -116,6 +120,7 @@ a {
 ul { 
     list-style-type: disc; 
     list-style-position: inside; 
+    margin-bottom: 20px;
 }
 
 ol { 
@@ -188,6 +193,7 @@ input[type="submit"] {
     -webkit-appearance: none;
     border-radius: 0;
     border: 1px solid $primary-color;
+    width: 100%;
 
     &::placeholder {
         color: $secondary-color;
@@ -362,7 +368,8 @@ pre {
 }
 
 .wrapper {
-    max-width: 600px;
+    // max-width: 600px;
+    max-width: 950px;
     margin: 0 auto;
     padding: 0 25px;
     box-sizing: border-box;
@@ -535,14 +542,12 @@ header {
 }
 
 
-
-
-
 .button {
-    padding: 6px;
-    background-color: $secondary-color;
+    padding: 10px 20px;
+    background-color: #D9D9D9;
     display: block;
     margin-bottom: 16px;
+    text-align: center;
 
     &:hover {
         color: $secondary-color;
@@ -747,6 +752,14 @@ article {
     margin-top: -20px;
 }
 
+/* Gravity Form */
+.gform_body {
+    list-style: none;
+
+    li {
+        margin-bottom: 10px;
+    }
+}
 
 
 /* WOOCOMMERCE */

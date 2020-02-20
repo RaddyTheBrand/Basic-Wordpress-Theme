@@ -23,7 +23,7 @@ add_action ('after_setup_theme', 'basic_wp_setup');
 function wpb_custom_new_menu() {
     register_nav_menu('my-custom-menu',__('TheMinimalist Custom Menu', 'theminimalist'));
 }
-add_action('init', 'wpb_custom_new_menu');
+add_action('init', 'wpb_custom_new_menu'); 
 
 // Post Thumbnails
 add_theme_support('post-thumbnails');

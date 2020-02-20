@@ -44,8 +44,8 @@
         <?php
             // Making an excerpt of the blog post content
             $excerpt = strip_tags($post->post_content);
-            if (strlen($excerpt) > 100) {
-                $excerpt = substr($excerpt, 0, 100);
+            if (strlen($excerpt) > 180) {
+                $excerpt = substr($excerpt, 0, 180);
                 $excerpt = substr($excerpt, 0, strrpos($excerpt, ' '));
                 $excerpt .= '...';
             }

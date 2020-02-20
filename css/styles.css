@@ -1,5 +1,6 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,500&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Work+Sans:700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -8,8 +9,8 @@
 }
 
 body {
-  font-family: 'Raleway', sans-serif;
-  color: #000;
+  font-family: "Open Sans",sans-serif;
+  color: #272730;
   line-height: 1.6;
   font-weight: 300;
   -webkit-text-size-adjust: auto;
@@ -17,7 +18,6 @@ body {
       -ms-text-size-adjust: auto;
           text-size-adjust: auto;
   letter-spacing: 1px;
-  font-size: 1em;
   background-color: #FFFFFF;
 }
 
@@ -95,7 +95,9 @@ video {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 500;
+  font-family: "Work Sans",sans-serif;
+  font-style: normal;
+  font-weight: 700;
   margin-bottom: 0.6em;
   line-height: 1.2em;
 }
@@ -121,6 +123,7 @@ h5, h6 {
 }
 
 p {
+  color: #808080;
   margin-bottom: 0.8em;
   text-rendering: optimizeLegibility;
 }
@@ -128,25 +131,26 @@ p {
 ::-moz-selection {
   /* Code for Firefox */
   color: #fff;
-  background: #000;
+  background: #272730;
 }
 
 ::selection {
   color: #fff;
-  background: #000;
+  background: #272730;
 }
 
 a {
-  color: #000;
+  color: #272730;
 }
 
 a:hover {
-  color: #D9D9D9;
+  color: #808080;
 }
 
 ul {
   list-style-type: disc;
   list-style-position: inside;
+  margin-bottom: 20px;
 }
 
 ol {
@@ -181,7 +185,7 @@ table th, table td {
 
 blockquote {
   background: #f9f9f9;
-  border-left: 10px solid #D9D9D9;
+  border-left: 10px solid #808080;
   margin: 1.5em 0;
   padding: 0.5em 10px;
   quotes: "“" "”" "‘" "’";
@@ -218,7 +222,8 @@ input[type="submit"] {
           box-sizing: border-box;
   -webkit-appearance: none;
   border-radius: 0;
-  border: 1px solid #000;
+  border: 1px solid #272730;
+  width: 100%;
 }
 
 textarea::-webkit-input-placeholder,
@@ -226,7 +231,7 @@ input[type="text"]::-webkit-input-placeholder,
 input[type="email"]::-webkit-input-placeholder,
 input[type="button"]::-webkit-input-placeholder,
 input[type="submit"]::-webkit-input-placeholder {
-  color: #D9D9D9;
+  color: #808080;
 }
 
 textarea:-ms-input-placeholder,
@@ -234,7 +239,7 @@ input[type="text"]:-ms-input-placeholder,
 input[type="email"]:-ms-input-placeholder,
 input[type="button"]:-ms-input-placeholder,
 input[type="submit"]:-ms-input-placeholder {
-  color: #D9D9D9;
+  color: #808080;
 }
 
 textarea::-ms-input-placeholder,
@@ -242,7 +247,7 @@ input[type="text"]::-ms-input-placeholder,
 input[type="email"]::-ms-input-placeholder,
 input[type="button"]::-ms-input-placeholder,
 input[type="submit"]::-ms-input-placeholder {
-  color: #D9D9D9;
+  color: #808080;
 }
 
 textarea::placeholder,
@@ -250,7 +255,7 @@ input[type="text"]::placeholder,
 input[type="email"]::placeholder,
 input[type="button"]::placeholder,
 input[type="submit"]::placeholder {
-  color: #D9D9D9;
+  color: #808080;
 }
 
 label {
@@ -374,8 +379,8 @@ pre {
 
 .post-tags {
   padding: 13px;
-  border-top: 1px solid #D9D9D9;
-  border-bottom: 1px solid #D9D9D9;
+  border-top: 1px solid #808080;
+  border-bottom: 1px solid #808080;
   margin-top: 20px;
   margin-bottom: 20px;
 }
@@ -413,7 +418,7 @@ pre {
 }
 
 .wrapper {
-  max-width: 600px;
+  max-width: 950px;
   margin: 0 auto;
   padding: 0 25px;
   -webkit-box-sizing: border-box;
@@ -499,8 +504,8 @@ header .logo-flex {
 .slogan {
   text-align: center;
   padding: 10px;
-  border-top: 1px solid #D9D9D9;
-  border-bottom: 1px solid #D9D9D9;
+  border-top: 1px solid #808080;
+  border-bottom: 1px solid #808080;
 }
 
 .slogan p {
@@ -508,7 +513,7 @@ header .logo-flex {
 }
 
 .author {
-  border-bottom: 1px solid #D9D9D9;
+  border-bottom: 1px solid #808080;
 }
 
 .author .author-image {
@@ -525,7 +530,7 @@ header .logo-flex {
 }
 
 .social {
-  border-bottom: 1px solid #D9D9D9;
+  border-bottom: 1px solid #808080;
   position: relative;
   padding: 0px !important;
 }
@@ -546,15 +551,15 @@ header .logo-flex {
 }
 
 .social .newsletter .subscribebutton {
-  background-color: #000;
+  background-color: #272730;
   color: #fff;
 }
 
 .social .newsletter .response {
   position: absolute;
   bottom: 56px;
-  background: #000;
-  color: #D9D9D9;
+  background: #272730;
+  color: #808080;
   padding: 10px;
 }
 
@@ -623,19 +628,20 @@ header .logo-flex {
 }
 
 .button {
-  padding: 6px;
+  padding: 10px 20px;
   background-color: #D9D9D9;
   display: block;
   margin-bottom: 16px;
+  text-align: center;
 }
 
 .button:hover {
-  color: #D9D9D9;
-  background-color: #000;
+  color: #808080;
+  background-color: #272730;
 }
 
 .loadmore {
-  background-color: #000;
+  background-color: #272730;
   color: #fff;
   padding: 10px 0;
   text-align: center;
@@ -657,7 +663,7 @@ footer {
   right: 0;
   text-align: center;
   z-index: 1;
-  border-bottom: 1px solid #D9D9D9;
+  border-bottom: 1px solid #808080;
 }
 
 #toggleMyMenu ul {
@@ -680,7 +686,7 @@ footer {
 }
 
 #toggleMyMenu ul li .sub-menu li {
-  border-top: 1px solid #D9D9D9;
+  border-top: 1px solid #808080;
 }
 
 nav.pagination {
@@ -689,8 +695,8 @@ nav.pagination {
   -ms-grid-columns: (minmax(10px, 1fr))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(10px, 1fr));
   text-align: center;
-  border-bottom: 1px solid #D9D9D9;
-  border-top: 1px solid #D9D9D9;
+  border-bottom: 1px solid #808080;
+  border-top: 1px solid #808080;
 }
 
 nav.pagination a, nav.pagination span {
@@ -707,7 +713,7 @@ nav.pagination a, nav.pagination span {
 }
 
 .error404 input {
-  border: 1px solid #D9D9D9;
+  border: 1px solid #808080;
 }
 
 article a {
@@ -715,7 +721,7 @@ article a {
 }
 
 article a:hover {
-  color: #000;
+  color: #272730;
 }
 
 article .thumbnail {
@@ -750,7 +756,7 @@ article .content {
 }
 
 article:not(:last-child) {
-  border-bottom: 1px solid #D9D9D9;
+  border-bottom: 1px solid #808080;
 }
 
 .single-page h1.heading {
