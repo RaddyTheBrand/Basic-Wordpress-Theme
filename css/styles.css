@@ -257,6 +257,20 @@ label {
   display: block;
 }
 
+.wp-block-embed-youtube {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+}
+
+.wp-block-embed-youtube iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 /* WP Required CSS */
 .screen-reader-text {
   border: 0;
@@ -771,6 +785,11 @@ article:not(:last-child) {
 /* Contact Form 7 */
 .single-page .wpcf7-form .wpcf7-form-control-wrap {
   margin-left: 0;
+}
+
+.wpcf7-form {
+  white-space: initial;
+  margin-top: -20px;
 }
 
 /* WOOCOMMERCE */
