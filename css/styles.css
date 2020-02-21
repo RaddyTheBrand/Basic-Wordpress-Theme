@@ -123,7 +123,7 @@ h5, h6 {
 }
 
 p {
-  color: #808080;
+  color: #555759;
   margin-bottom: 0.8em;
   text-rendering: optimizeLegibility;
 }
@@ -144,7 +144,7 @@ a {
 }
 
 a:hover {
-  color: #808080;
+  color: #D9D9D9;
 }
 
 ul {
@@ -185,7 +185,7 @@ table th, table td {
 
 blockquote {
   background: #f9f9f9;
-  border-left: 10px solid #808080;
+  border-left: 10px solid #D9D9D9;
   margin: 1.5em 0;
   padding: 0.5em 10px;
   quotes: "“" "”" "‘" "’";
@@ -231,7 +231,7 @@ input[type="text"]::-webkit-input-placeholder,
 input[type="email"]::-webkit-input-placeholder,
 input[type="button"]::-webkit-input-placeholder,
 input[type="submit"]::-webkit-input-placeholder {
-  color: #808080;
+  color: #D9D9D9;
 }
 
 textarea:-ms-input-placeholder,
@@ -239,7 +239,7 @@ input[type="text"]:-ms-input-placeholder,
 input[type="email"]:-ms-input-placeholder,
 input[type="button"]:-ms-input-placeholder,
 input[type="submit"]:-ms-input-placeholder {
-  color: #808080;
+  color: #D9D9D9;
 }
 
 textarea::-ms-input-placeholder,
@@ -247,7 +247,7 @@ input[type="text"]::-ms-input-placeholder,
 input[type="email"]::-ms-input-placeholder,
 input[type="button"]::-ms-input-placeholder,
 input[type="submit"]::-ms-input-placeholder {
-  color: #808080;
+  color: #D9D9D9;
 }
 
 textarea::placeholder,
@@ -255,7 +255,7 @@ input[type="text"]::placeholder,
 input[type="email"]::placeholder,
 input[type="button"]::placeholder,
 input[type="submit"]::placeholder {
-  color: #808080;
+  color: #D9D9D9;
 }
 
 label {
@@ -379,8 +379,8 @@ pre {
 
 .post-tags {
   padding: 13px;
-  border-top: 1px solid #808080;
-  border-bottom: 1px solid #808080;
+  border-top: 1px solid #D9D9D9;
+  border-bottom: 1px solid #D9D9D9;
   margin-top: 20px;
   margin-bottom: 20px;
 }
@@ -504,8 +504,8 @@ header .logo-flex {
 .slogan {
   text-align: center;
   padding: 10px;
-  border-top: 1px solid #808080;
-  border-bottom: 1px solid #808080;
+  border-top: 1px solid #D9D9D9;
+  border-bottom: 1px solid #D9D9D9;
 }
 
 .slogan p {
@@ -513,7 +513,7 @@ header .logo-flex {
 }
 
 .author {
-  border-bottom: 1px solid #808080;
+  border-bottom: 1px solid #D9D9D9;
 }
 
 .author .author-image {
@@ -530,7 +530,7 @@ header .logo-flex {
 }
 
 .social {
-  border-bottom: 1px solid #808080;
+  border-bottom: 1px solid #D9D9D9;
   position: relative;
   padding: 0px !important;
 }
@@ -559,7 +559,7 @@ header .logo-flex {
   position: absolute;
   bottom: 56px;
   background: #272730;
-  color: #808080;
+  color: #D9D9D9;
   padding: 10px;
 }
 
@@ -636,7 +636,7 @@ header .logo-flex {
 }
 
 .button:hover {
-  color: #808080;
+  color: #D9D9D9;
   background-color: #272730;
 }
 
@@ -663,7 +663,7 @@ footer {
   right: 0;
   text-align: center;
   z-index: 1;
-  border-bottom: 1px solid #808080;
+  border-bottom: 1px solid #D9D9D9;
 }
 
 #toggleMyMenu ul {
@@ -686,7 +686,7 @@ footer {
 }
 
 #toggleMyMenu ul li .sub-menu li {
-  border-top: 1px solid #808080;
+  border-top: 1px solid #D9D9D9;
 }
 
 nav.pagination {
@@ -695,8 +695,8 @@ nav.pagination {
   -ms-grid-columns: (minmax(10px, 1fr))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(10px, 1fr));
   text-align: center;
-  border-bottom: 1px solid #808080;
-  border-top: 1px solid #808080;
+  border-bottom: 1px solid #D9D9D9;
+  border-top: 1px solid #D9D9D9;
 }
 
 nav.pagination a, nav.pagination span {
@@ -713,7 +713,7 @@ nav.pagination a, nav.pagination span {
 }
 
 .error404 input {
-  border: 1px solid #808080;
+  border: 1px solid #D9D9D9;
 }
 
 article a {
@@ -756,7 +756,7 @@ article .content {
 }
 
 article:not(:last-child) {
-  border-bottom: 1px solid #808080;
+  border-bottom: 1px solid #D9D9D9;
 }
 
 .single-page h1.heading {
@@ -767,8 +767,32 @@ article:not(:last-child) {
   top: -86px;
 }
 
+.single-page .date {
+  font-size: 14px;
+}
+
+.single-page .single-page__tags ul {
+  list-style: none;
+}
+
+.single-page .single-page__tags ul li {
+  display: inline-block;
+}
+
+.single-page .single-page__tags ul li a {
+  background: #f2f2f2;
+  padding: .3rem .5rem;
+  margin: 0 .5rem .5rem 0;
+  border-radius: 4px;
+  color: #5f5f5f;
+  font-size: .8rem;
+  font-weight: 400;
+  text-decoration: none;
+}
+
 .single-page .hero-image {
-  height: 300px;
+  height: 160px;
+  width: 250px;
   padding-top: 22px;
   margin-bottom: -11px;
 }
@@ -822,6 +846,15 @@ article:not(:last-child) {
 .wpcf7-form {
   white-space: initial;
   margin-top: -20px;
+}
+
+/* Gravity Form */
+.gform_body {
+  list-style: none;
+}
+
+.gform_body li {
+  margin-bottom: 10px;
 }
 
 /* WOOCOMMERCE */
