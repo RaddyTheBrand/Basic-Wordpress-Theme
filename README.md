@@ -1,11 +1,17 @@
 # Basic-Wordpress-Theme
 
 ![Cover Bro](https://github.com/RaddyTheBrand/Basic-Wordpress-Theme/blob/master/screenshot.png)
+
 THis is the basic wordpress theme that I've been developing as part of some of my YouTube tutoririals.
 
 ### Task List
 - [ ] Fix Post Thumbnail
+- [ ] Allow HTML to Author Bio
+- [ ] Fix Search Popup
+- [ ] Fix Nav Animation
+- [ ] Fix Post Thumbnail
 
+### YouTube Tutorials
 
 [Part 1 Design](https://www.youtube.com/watch?v=wEEOiKlzUi8)
 
