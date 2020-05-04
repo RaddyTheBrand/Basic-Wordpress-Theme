@@ -2,7 +2,7 @@
 
 ![Cover Bro](https://github.com/RaddyTheBrand/Basic-Wordpress-Theme/blob/master/screenshot.png)
 
-THis is the basic wordpress theme that I've been developing as part of some of my YouTube tutoririals.
+This "Basic" theme has been developed as part of YouTube tutoririals by Raddy @RaddyTheBrand
 
 ### Task List
 - [ ] Fix Post Thumbnail
