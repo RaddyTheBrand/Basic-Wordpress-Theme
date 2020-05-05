@@ -417,7 +417,7 @@ pre {
   list-style-position: inherit;
 }
 
-.minimalist_comments ol li {
+.minimalist_comments li {
   padding: 2em 0 1.2em 1em;
   border-bottom: 1px solid #D9D9D9;
 }
