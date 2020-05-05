@@ -6,10 +6,10 @@ This "Basic" theme has been developed as part of YouTube tutoririals by Raddy @R
 
 ### Task List
 - [ ] Fix Post Thumbnail
+- [ ] Add Categories
 - [ ] Allow HTML to Author Bio
 - [ ] Fix Search Popup
 - [ ] Fix Nav Animation
-- [ ] Fix Post Thumbnail
 
 ### YouTube Tutorials
 

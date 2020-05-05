@@ -144,14 +144,4 @@ add_action('wp_enqueue_scripts','load_script_for_fake_threading');
 
 
 
-// Custom Dashboard Widget
-
-add_action('wp_dashboard_setup', 'custom_dashboard_widget_contact_details');
-
-function custom_dashboard_widget_contact_details(){
-  if (current_user_can('manage_options')) {
-    wp_add_dashboard_widget('custom_contact_widget', 'Contact Details', 'custom_dashboard_contact');
-  }
-}
-
 

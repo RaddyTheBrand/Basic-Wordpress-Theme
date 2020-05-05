@@ -11,7 +11,6 @@ $row-padding: 11px;
  
 * {
     margin:0;
-    padding:0;
     box-sizing: border-box;
 }
 
@@ -23,7 +22,6 @@ body {
     text-size-adjust: auto;
     letter-spacing: 1px;
     background-color:#FFFFFF;
-
 } 
 
 .row::after {
@@ -187,7 +185,7 @@ input[type="submit"] {
     font-family: inherit;
     border:0;
     font-size: 1.1em;
-    height: 56px;
+
     padding: 10px;
     box-sizing: border-box;
     // width: 100%; 
@@ -361,6 +359,43 @@ pre {
     padding: 30px;
     text-align: center;
 }
+
+.minimalist_comments {
+    ol {
+        padding: 0;
+        list-style-type: none;
+        list-style-position: inherit;
+
+        li {
+            padding: 2em 0 1.2em 1em;
+            border-bottom: 1px solid $secondary-color;
+        }
+    }
+
+    input[type="button"], input[type="submit"] {
+        background-color: #000;
+        color: $secondary-color;
+    }
+
+    form { margin-top: 4em; }
+    .cm-name { text-transform: capitalize; }
+    .small {
+        color: $secondary-color;
+    }
+
+    .alert-approval {
+        color: #155724;
+        position: relative;
+        padding: .75rem 1.25rem;
+        margin-bottom: 1rem;
+        border: 1px solid transparent;
+        background-color: #d4edda;
+        border-color: #c3e6cb;
+    }
+}
+
+
+ 
 
 
 
@@ -695,7 +730,9 @@ article {
     } 
 
     .date {
+       display: block;
        font-size: 14px; 
+       margin-bottom: 2em;
     }
 
     .single-page__tags {

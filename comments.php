@@ -1,13 +1,17 @@
+<div class="minimalist_comments">
 <?php if($comments) : ?>
 	<ol>
   	<?php foreach($comments as $comment) : ?>
 		<li id="comment-<?php comment_ID(); ?>">
+
 			<?php if ($comment->comment_approved == '0') : ?>
-				<p>Your comment is awaiting approval</p>
+				<p class="alert-approval">Your comment is awaiting approval</p>
 			<?php endif; ?>
+
+			<b class="cm-name"><?php comment_author_link(); ?></b> &middot; <small><?php comment_date(); ?> at <?php comment_time(); ?></small>
 			<?php comment_text(); ?>
-			<cite><?php comment_type(); ?> by <?php comment_author_link(); ?> on <?php comment_date(); ?> at <?php comment_time(); ?></cite>
-		</li>
+						
+		</li> 
 	<?php endforeach; ?>
 	</ol>
 <?php else : ?>
@@ -37,3 +41,4 @@
 <?php else : ?>
 	<p>The comments are closed.</p>
 <?php endif; ?>
+</div>

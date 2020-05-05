@@ -5,15 +5,15 @@
 ?>
 <!-- <h1 style="color:red;">Single.php</h1> -->
 <main class="row single-page">
-    <?php if ( has_post_thumbnail() ) { ?>
+    <?php /*if ( has_post_thumbnail() ) { ?>
     <div class="hero-image">
-        <?php the_post_thumbnail('large', ['class' => 'objFit'], array('title' => get_the_title() )); ?>
+        <?php //the_post_thumbnail('large', ['class' => 'objFit'], array('title' => get_the_title() )); ?>
     </div>
-    <?php } ?>
+    <?php }*/ ?>
 
     <h1 class="heading"><?php the_title(); ?></h1>
     <time class="date"><?php the_date( get_option( 'date_format' ) ); ?></time>
-    <div class="single-page__tags"><?php the_tags( '<ul><li>', '</li><li>', '</li></ul>' ); ?></div>
+    
     <?php the_content();?>
 
     <?php 

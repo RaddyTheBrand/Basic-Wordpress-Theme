@@ -8,10 +8,9 @@
 </head>
 <body <?php body_class(); ?>>
  
-<div class="wrapper">
+<div class="wrapper"> 
 
     <header>
-
         <div class="row">
             <div class="col-6 col-s-6 logo-flex">
                 <?php 
