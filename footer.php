@@ -30,9 +30,10 @@
             $basicFooter = get_theme_mod('basic-footer-callout-copyright');
 
             if ($basicFooter == "" || $basicFooter == null) {
-                $basicFooter = "&copy; " . $thisYear . " " . $blog_title . " / Theme Created by <a href='https://www.raddy.co.uk'>Raddy</a>";
+                $basicFooter = "&copy; " . $thisYear . " " . $blog_title . " / Designed & Built by by <a href='https://www.raddy.co.uk'>Raddy</a>";
             }
             echo $basicFooter;
+
         ?>
     </p>
 </footer>

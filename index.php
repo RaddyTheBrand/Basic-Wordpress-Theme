@@ -2,7 +2,7 @@
 <?php if (get_theme_mod('basic-author-callout-display') == 'Yes') { ?>
 <div class="row row-padding author">
     <div class="col-6 author-image">
-    <img src="<?php echo wp_get_attachment_url(get_theme_mod('basic-author-callout-image')) ?>" alt="Author Image">
+    <img loading="lazy" src="<?php echo wp_get_attachment_url(get_theme_mod('basic-author-callout-image')) ?>" alt="Author Image">
     </div>
     <div class="col-6 author-content">
         <?php 
@@ -29,7 +29,7 @@
         <a href="<?php the_permalink();?>">
         <?php  
             if ( has_post_thumbnail() ) {
-                the_post_thumbnail('medium_large', ['class' => 'objFit'], array('title' => get_the_title() ));
+                the_post_thumbnail('medium_large', ['class' => 'objFit', 'loading' => 'lazy'], array('title' => get_the_title() ));
             } else {
             echo '<img src="' . get_stylesheet_directory_uri( 'stylesheet_directory' ) 
             . '/images/thumbnail-default.jpg" alt="Missing Image"/>';

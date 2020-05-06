@@ -7,6 +7,10 @@ This "Basic" theme has been developed as part of YouTube tutoririals by Raddy @R
 ### Task List
 - [x] Allow HTML to Author Bio
 - [x] Fix input height problem
+- [x] Lazy loading 
+- [x] HTML5 srcset and sizes
+- [ ] Check Font Units
+- [ ] Customizer Input Validation
 - [ ] Close navigation on body click
 - [ ] Navigation Sub Menu's
 - [ ] Fix Post Thumbnail on Mobile
