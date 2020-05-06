@@ -5,11 +5,17 @@
 This "Basic" theme has been developed as part of YouTube tutoririals by Raddy @RaddyTheBrand
 
 ### Task List
-- [ ] Fix Post Thumbnail
+- [x] Allow HTML to Author Bio
+- [x] Fix input height problem
+- [ ] Close navigation on body click
+- [ ] Navigation Sub Menu's
+- [ ] Fix Post Thumbnail on Mobile
 - [ ] Add Categories
-- [ ] Allow HTML to Author Bio
 - [ ] Fix Search Popup
+- [ ] Change pop-up animations
+- [ ] Remove Author Aspect ratio crop
 - [ ] Fix Nav Animation
+- [ ] Customizer Input Validation
 
 ### YouTube Tutorials
 
@@ -20,3 +26,5 @@ This "Basic" theme has been developed as part of YouTube tutoririals by Raddy @R
 [Part 3 CSS](https://www.youtube.com/watch?v=LEAiAn4OGZ4)
 
 [Part 4 WP](https://www.youtube.com/watch?v=LSllvqX4KtU)
+
+

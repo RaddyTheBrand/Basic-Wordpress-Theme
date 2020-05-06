@@ -26,6 +26,10 @@ class TheMinimalist_Customizer {
         return filter_var($input, FILTER_SANITIZE_STRING);
     }
 
+    public function sanitize_about_text($input) {
+        return $input;
+    }
+
     public function sanitize_custom_url($input) {
         return filter_var($input, FILTER_SANITIZE_URL);
     }
@@ -70,7 +74,7 @@ class TheMinimalist_Customizer {
 
         $wp_customize->add_setting('basic-author-callout-text', array(
             'default' => '',
-            'sanitize_callback' => array( $this, 'sanitize_custom_text' )
+            'sanitize_callback' => array( $this, 'sanitize_about_text' )
         ));
 
         $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'basic-author-callout-control', array(
@@ -91,7 +95,7 @@ class TheMinimalist_Customizer {
             'label' => 'Image',
             'section' => 'basic-author-callout-section',
             'settings' => 'basic-author-callout-image',
-            'width' => 442,
+            'width' => 542,
             'height' => 310
         )));
 
