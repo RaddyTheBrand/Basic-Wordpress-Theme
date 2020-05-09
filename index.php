@@ -36,23 +36,25 @@
             }
         ?>
         </a>
-        <span class="date"><?php echo get_the_date(); ?></span>
     </div> 
     <div class="col-6 content">
-        <h2><a href="<?php the_permalink();?>"><?php the_title(); ?></a></h2>
+        <a href="<?php the_permalink(); ?>">
+        <h2><?php the_title(); ?></h2>
+        
         <p>
         <?php
             // Making an excerpt of the blog post content
             $excerpt = strip_tags($post->post_content);
-            if (strlen($excerpt) > 180) {
-                $excerpt = substr($excerpt, 0, 180);
+            if (strlen($excerpt) > 198) {
+                $excerpt = substr($excerpt, 0, 198);
                 $excerpt = substr($excerpt, 0, strrpos($excerpt, ' '));
                 $excerpt .= '...';
             }
             echo $excerpt;
         ?>
         </p>
-        <a class="button" href="<?php the_permalink();?>">More +</a>
+        <time><?php echo get_the_date(); ?></time> 
+        </a>
     </div>
 </article>
 

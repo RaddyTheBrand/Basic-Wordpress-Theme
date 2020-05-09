@@ -14,7 +14,7 @@ jQuery( document ).ready(function() {
 
     jQuery(navToggle).click(function(){
         if(isOpen == 0) {
-            TweenLite.to(mobileNav, 0.5, { display:'block', opacity: 1, ease: Elastic.easeOut.config(1, 0.3), y: -46 });
+            TweenLite.to(mobileNav, 0.5, { display:'block', opacity: 1, ease: " power2. inOut", y: -46 });
             jQuery(openBurger).hide();
             jQuery(closeBurger).show();
             jQuery(closeBurger).css('display', 'block');
@@ -30,12 +30,10 @@ jQuery( document ).ready(function() {
         }
     });
 
-
-
     jQuery('#search__button').click(function(){
       if(isOpenSearch == 0) {
         jQuery("#search_underlayer").show();
-        TweenLite.to('#search__popup', 0.5, { display:'block', opacity: 1, ease: Elastic.easeOut.config(1, 0.3), y: -46 });
+        TweenLite.to('#search__popup', 0.5, { display:'block', opacity: 1, ease: " power2. inOut", y: -46 });
         isOpenSearch++;
       }
       else{

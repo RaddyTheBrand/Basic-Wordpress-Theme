@@ -37,17 +37,3 @@
         </nav>
     </header>
     
-    <div class="row slogan">
-        <div class="col-12">
-        <p>
-        <?php $slogan = get_bloginfo('description'); ?>
-        <?php 
-            if ( $slogan!='' ) { 
-                bloginfo('description'); 
-            } else {
-                echo "Edit this by going to your Dashboard -> Appearance -> Custinuse -> Site Identity";
-            }
-        ?>
-        </p>
-        </div>
-    </div>

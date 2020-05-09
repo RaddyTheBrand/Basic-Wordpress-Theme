@@ -9,16 +9,20 @@ This "Basic" theme has been developed as part of YouTube tutoririals by Raddy @R
 - [x] Fix input height problem
 - [x] Lazy loading 
 - [x] HTML5 srcset and sizes
+- [x] Move Article Date
+- [x] Remove Read More Button
+- [x] Remove Slogan
+- [x] Remove margin from all elements
 - [ ] Check Font Units
 - [ ] Customizer Input Validation
 - [ ] Close navigation on body click
 - [ ] Navigation Sub Menu's
-- [ ] Fix Post Thumbnail on Mobile
+- [ ] Adjust Thumbnail on Mobile
 - [ ] Add Categories
-- [ ] Fix Search Popup
-- [ ] Change pop-up animations
-- [ ] Remove Author Aspect ratio crop
-- [ ] Fix Nav Animation
+- [x] Fix Search Popup
+- [x] Change pop-up animations
+- [x] Update Author Aspect ratio crop
+- [x] Fix Nav Animation
 - [ ] Customizer Input Validation
 
 ### YouTube Tutorials
