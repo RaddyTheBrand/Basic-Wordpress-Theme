@@ -12,8 +12,11 @@
     <?php }*/ ?>
 
     <h1 class="heading"><?php the_title(); ?></h1>
-    <time class="date"><?php the_date( get_option( 'date_format' ) ); ?></time>
-    
+    <p class="meta">
+        By <?php the_author(); ?> in <?php the_category( ' ' ); ?> &middot;
+        <time class="date"><?php the_date( get_option( 'date_format' ) ); ?></time>
+    </p>
+
     <?php the_content();?>
 
     <?php 

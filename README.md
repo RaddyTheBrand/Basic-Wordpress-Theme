@@ -13,6 +13,9 @@ This "Basic" theme has been developed as part of YouTube tutoririals by Raddy @R
 - [x] Remove Read More Button
 - [x] Remove Slogan
 - [x] Remove margin from all elements
+- [x] Improved Typography
+- [x] Added Post Author, Category & Date
+- [x] Added New Article Badge
 - [ ] Check Font Units
 - [ ] Customizer Input Validation
 - [ ] Close navigation on body click

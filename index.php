@@ -27,6 +27,12 @@
 <article class="row row-padding"  id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <div class="col-6 thumbnail">
         <a href="<?php the_permalink();?>">
+        <?php
+            // Check If Post is New
+            if( strtotime( $post->post_date ) > strtotime('-20 days') ) {
+                echo "<div class='newpost'>NEW</div>";
+            }
+        ?>
         <?php  
             if ( has_post_thumbnail() ) {
                 the_post_thumbnail('medium_large', ['class' => 'objFit', 'loading' => 'lazy'], array('title' => get_the_title() ));
@@ -40,7 +46,6 @@
     <div class="col-6 content">
         <a href="<?php the_permalink(); ?>">
         <h2><?php the_title(); ?></h2>
-        
         <p>
         <?php
             // Making an excerpt of the blog post content
@@ -53,7 +58,6 @@
             echo $excerpt;
         ?>
         </p>
-        <time><?php echo get_the_date(); ?></time> 
         </a>
     </div>
 </article>
