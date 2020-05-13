@@ -2,9 +2,9 @@
 
 /* Adding CSS & JS */
 function basic_enqueue_styles_scripts() {
-    wp_register_style('styles', get_template_directory_uri() . '/css/styles.css' );
+    wp_register_style('styles', get_template_directory_uri() . '/css/styles.css', false, '1.0.0' );
     $dependencies = array('styles');
-    wp_enqueue_style( 'basic-style', get_stylesheet_uri(), $dependencies ); 
+    wp_enqueue_style( 'styles', get_stylesheet_uri(), $dependencies); 
     add_theme_support('post-thumbnails');
     wp_register_script('gsap-tweenmax', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js', false, '2.1.3');
     wp_enqueue_script('gsap-tweenmax');
@@ -126,13 +126,13 @@ function theme_get_customizer_css() {
 }
 
 
-function theme_enqueue_styles() {
-    wp_enqueue_style( 'theme-styles', get_stylesheet_uri() ); // This is where you enqueue your theme's main stylesheet
-    $custom_css = theme_get_customizer_css();
-    wp_add_inline_style( 'theme-styles', $custom_css );
-}
+// function theme_enqueue_styles() {
+//     wp_enqueue_style( 'theme-styles', get_stylesheet_uri() ); // This is where you enqueue your theme's main stylesheet
+//     $custom_css = theme_get_customizer_css();
+//     wp_add_inline_style( 'theme-styles', $custom_css );
+// }
     
-add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
+// add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 
 
 // Comment Reply Fix
