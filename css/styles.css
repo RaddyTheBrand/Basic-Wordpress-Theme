@@ -788,6 +788,13 @@ article .thumbnail {
   padding-top: 22px !important;
 }
 
+article .thumbnail .newpost {
+  position: absolute;
+  padding: 1rem;
+  background-color: #272730;
+  color: #fff;
+}
+
 article .thumbnail a {
   display: block;
   height: 242px;
@@ -982,12 +989,6 @@ article:not(:last-child) {
   }
   .single-page #search__popup {
     top: -30px;
-  }
-  article .thumbnail .newpost {
-    position: absolute;
-    padding: 1rem;
-    background-color: #272730;
-    color: #fff;
   }
 }
 /*# sourceMappingURL=styles.css.map */
