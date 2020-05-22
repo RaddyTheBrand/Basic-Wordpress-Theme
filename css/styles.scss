@@ -111,6 +111,7 @@ a {
 }
 
 ul { 
+    padding: 0; 
     list-style-type: disc; 
     list-style-position: inside; 
     margin-bottom: 20px;
@@ -169,10 +170,8 @@ input[type="submit"] {
     font-family: inherit;
     border:0;
     font-size: 1.1em;
-    min-height: 56px;
+    height: 56px;
     padding: 10px;
-    box-sizing: border-box;
-    // width: 100%; 
     -webkit-appearance: none;
     border-radius: 0;
     border: 1px solid $primary-color;
@@ -265,17 +264,17 @@ pre {
     z-index: 100000
 }
 
-.alignleft {
-    display: inline;
-    float: left;
-    margin-right: 1.5em
-}
+// .alignleft {
+//     display: inline;
+//     float: left;
+//     margin-right: 1.5em
+// }
 
-.alignright {
-    display: inline;
-    float: right;
-    margin-left: 1.5em
-}
+// .alignright {
+//     display: inline;
+//     float: right;
+//     margin-left: 1.5em
+// }
 
 .aligncenter {
     clear: both;
@@ -323,7 +322,7 @@ pre {
 }
 
 /* Comments */
-.comment-form-author, .comment-form-url, .comment-form-email, .comment-form-comment {
+#commentform {
 
     textarea {
         min-height: 200px;
@@ -333,6 +332,17 @@ pre {
     input {
         width: 100%;
     }
+
+    input[type="submit"] {
+        background-color: #000;
+        color: #fff;
+    }
+
+    input[type="submit"]:hover {
+        background-color: $primary-color-hover;
+        color: #fff;
+    }
+    
 
 }
 
@@ -345,18 +355,40 @@ pre {
     text-align: center;
 }
 
-.minimalist_comments {
-    ol {
-        padding: 0;
-        list-style-type: none;
-        list-style-position: inherit;
+ol.commentlist {
+    position: relative;
+    padding: 0;
+    list-style-type: none;
+    list-style-position: inherit;
+
+
+    .children {
+        position: relative;
+        list-style: none;
     }
 
-    
-    li {
-        padding: 2em 0 1.2em 1em;
+    li.comment.depth-1  {
         border-bottom: 1px solid $secondary-color;
     }
+
+    .comment-body { padding: 2em 0 1.2em 80px; }
+
+    p.comment-text { margin: 0; }
+
+    cite { text-transform: capitalize; font-weight: bold; font-style: normal;}
+
+    .comment-meta {
+        display: inline-block;
+        font-size: smaller;
+    }
+    
+    img.avatar {
+        position: absolute;
+        left: 0;
+    }
+
+
+
     
     input[type="button"], input[type="submit"] {
         background-color: #000;
@@ -365,7 +397,7 @@ pre {
 
     form { margin-top: 4em; }
     .cm-name { text-transform: capitalize; }
-    .small {
+    .comment-meta {
         color: $secondary-color;
     }
 
@@ -378,7 +410,17 @@ pre {
         background-color: #d4edda;
         border-color: #c3e6cb;
     }
+
+
+    
+
+
+    
 }
+
+
+
+
 
 .social-icon {
     fill: #d9d9d9;

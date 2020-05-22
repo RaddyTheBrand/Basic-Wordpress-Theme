@@ -11,6 +11,7 @@
         <?php wp_list_comments(); paginate_comments_links(); ?>
 
     </ol>
+
     <?php comment_form(); ?>
     <?php 
         endwhile; }

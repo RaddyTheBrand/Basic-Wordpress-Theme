@@ -2,7 +2,7 @@
 
 /* Adding CSS & JS */
 function basic_enqueue_styles_scripts() {
-    wp_register_style('styles', get_template_directory_uri() . '/css/styles.css', false, '1.0.0' );
+    wp_register_style('styles', get_template_directory_uri() . '/css/styles.css', false, '1.0.2' );
     $dependencies = array('styles');
     wp_enqueue_style( 'styles', get_stylesheet_uri(), $dependencies); 
     add_theme_support('post-thumbnails');
@@ -140,6 +140,9 @@ function load_script_for_fake_threading() {
   if (is_singular()) wp_enqueue_script('comment-reply');
 }
 add_action('wp_enqueue_scripts','load_script_for_fake_threading');
+
+
+
 
 
 

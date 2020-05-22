@@ -16,17 +16,19 @@ This "Basic" theme has been developed as part of YouTube tutoririals by Raddy @R
 - [x] Improved Typography
 - [x] Added Post Author, Category & Date
 - [x] Added New Article Badge
+- [x] Fixed Search Page Results
+- [x] Added Comment Replies
+- [x] Fix Search Popup
+- [x] Change pop-up animations
+- [x] Update Author Aspect ratio crop
+- [x] Fix Nav Animation
+- [ ] Customizer Input Validation
 - [ ] Check Font Units
 - [ ] Customizer Input Validation
 - [ ] Close navigation on body click
 - [ ] Navigation Sub Menu's
 - [ ] Adjust Thumbnail on Mobile
 - [ ] Add Categories
-- [x] Fix Search Popup
-- [x] Change pop-up animations
-- [x] Update Author Aspect ratio crop
-- [x] Fix Nav Animation
-- [ ] Customizer Input Validation
 
 ### YouTube Tutorials
 
