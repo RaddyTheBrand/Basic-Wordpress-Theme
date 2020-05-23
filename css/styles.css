@@ -152,6 +152,7 @@ h6 {
 p {
   color: #555759;
   margin: 1.618em 0;
+  word-break: break-word;
   text-rendering: optimizeLegibility;
 }
 

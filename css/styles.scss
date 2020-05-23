@@ -90,6 +90,7 @@ h1, h2, h3, h4, h5, h6 {
 p {
     color: #555759;
     margin: 1.618em 0;
+    word-break: break-word;
     text-rendering: optimizeLegibility;
 }
 
@@ -264,18 +265,6 @@ pre {
     z-index: 100000
 }
 
-// .alignleft {
-//     display: inline;
-//     float: left;
-//     margin-right: 1.5em
-// }
-
-// .alignright {
-//     display: inline;
-//     float: right;
-//     margin-left: 1.5em
-// }
-
 .aligncenter {
     clear: both;
     text-align: center;
@@ -386,9 +375,6 @@ ol.commentlist {
         position: absolute;
         left: 0;
     }
-
-
-
     
     input[type="button"], input[type="submit"] {
         background-color: #000;
@@ -410,16 +396,8 @@ ol.commentlist {
         background-color: #d4edda;
         border-color: #c3e6cb;
     }
-
-
-    
-
-
     
 }
-
-
-
 
 
 .social-icon {
@@ -472,7 +450,6 @@ header {
 }
   
 
- 
 .mobile-menu {
     float: right;
     font-size: 0.8em;
@@ -490,17 +467,6 @@ header {
     }
 
 }
-
-// .slogan {
-//     text-align: center;
-//     padding: 10px;
-//     border-top: 1px solid $secondary-color;
-//     border-bottom: 1px solid $secondary-color;
-
-//     p {
-//         margin-bottom: 0;
-//     }
-// }
 
 .author {
     border-bottom: 1px solid $secondary-color;
